@@ -1,2 +1,2 @@
 #!/bin/bash
-scripts/yarn.sh workspace "@dasherized-account-name/$@"
+scripts/yarn.sh workspace "@watt-global-media/$@"

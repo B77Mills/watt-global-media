@@ -8,7 +8,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['parameter1/dasherized-account-name-websites'],
+  app_name: ['parameter1/watt-global-media-websites'],
   /**
    * Your New Relic license key.
    */

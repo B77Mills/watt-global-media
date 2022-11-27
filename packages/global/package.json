@@ -1,8 +1,8 @@
 {
-  "name": "@dasherized-account-name/package-global",
+  "name": "@watt-global-media/package-global",
   "version": "0.0.0",
-  "author": "Josh Worden <josh@parameter1.com>",
-  "repository": "https://github.com/parameter1/dasherized-account-name-websites/tree/master/packages/global",
+  "author": "Brandon Krigbaum <brandon@parameter1.com>",
+  "repository": "https://github.com/parameter1/watt-global-media-websites/tree/master/packages/global",
   "license": "MIT",
   "private": true,
   "scripts": {
