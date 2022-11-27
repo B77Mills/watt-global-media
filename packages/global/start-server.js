@@ -3,15 +3,15 @@ const { startServer } = require('@parameter1/base-cms-marko-web');
 const { set, get, getAsObject } = require('@parameter1/base-cms-object-path');
 const loadInquiry = require('@parameter1/base-cms-marko-web-inquiry');
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
-const omedaIdentityX = require('@parameter1/base-cms-marko-web-omeda-identity-x');
-const odentityCustomerUpsert = require('@parameter1/base-cms-marko-web-omeda/odentity/upsert-customer');
+// const omedaIdentityX = require('@parameter1/base-cms-marko-web-omeda-identity-x');
+const identityX = require('@parameter1/base-cms-marko-web-identity-x');
 
 const document = require('./components/document');
 const components = require('./components');
 const fragments = require('./fragments');
 const sharedRoutes = require('./routes');
 const paginated = require('./middleware/paginated');
-const omedaConfig = require('./config/omeda');
+// const omedaConfig = require('./config/omeda');
 const idxRouteTemplates = require('./templates/user');
 const recaptcha = require('./config/recaptcha');
 const idxNavItems = require('./config/identity-x-nav');
@@ -52,15 +52,16 @@ module.exports = (options = {}) => {
 
       // Setup IdentityX + Omeda
       const idxConfig = getAsObject(options, 'siteConfig.identityX');
-      omedaIdentityX(app, {
-        brandKey: omedaConfig.brandKey,
-        clientKey: omedaConfig.clientKey,
-        appId: omedaConfig.appId,
-        inputId: omedaConfig.inputId,
-        rapidIdentProductId: get(omedaConfig, 'rapidIdentification.productId'),
-        idxConfig,
-        idxRouteTemplates,
-      });
+      identityX(app, idxConfig, { templates: idxRouteTemplates });
+      // omedaIdentityX(app, {
+      //   brandKey: omedaConfig.brandKey,
+      //   clientKey: omedaConfig.clientKey,
+      //   appId: omedaConfig.appId,
+      //   inputId: omedaConfig.inputId,
+      //   rapidIdentProductId: get(omedaConfig, 'rapidIdentification.productId'),
+      //   idxConfig,
+      //   idxRouteTemplates,
+      // });
       idxNavItems({ site: app.locals.site });
 
       // Setup GAM.
@@ -77,12 +78,6 @@ module.exports = (options = {}) => {
 
       // Recaptcha
       set(app.locals, 'recaptcha', recaptcha);
-
-      // Omeda customer upsert
-      app.use(odentityCustomerUpsert({
-        brandKey: omedaConfig.brandKey,
-        onError: newrelic.noticeError.bind(newrelic),
-      }));
     },
     onAsyncBlockError: e => newrelic.noticeError(e),
   });
