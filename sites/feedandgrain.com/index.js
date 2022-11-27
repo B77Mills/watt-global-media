@@ -1,4 +1,4 @@
-const startServer = require('@dasherized-account-name/package-global/start-server');
+const startServer = require('@watt-global-media/package-global/start-server');
 
 const routes = require('./server/routes');
 const siteConfig = require('./config/site');

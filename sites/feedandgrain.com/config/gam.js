@@ -1,4 +1,4 @@
-const configureGAM = require('@dasherized-account-name/package-global/config/gam');
+const configureGAM = require('@watt-global-media/package-global/config/gam');
 
 const config = configureGAM({ basePath: 'p1' });
 

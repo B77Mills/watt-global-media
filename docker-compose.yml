@@ -59,18 +59,17 @@ services:
     environment:
       <<: *env
 
-  sandbox:
+  fg:
     <<: *site-cmd
-    working_dir: /root/sites/parameter1.dev
+    working_dir: /root/sites/feedandgrain.com
     environment:
       <<: [*env, *env-leonis]
-      EXPOSED_PORT: 9951
-      HOST: www-sandbox-com.dev.parameter1.com
-      LIVERELOAD_PORT: 19951
+      HOST: www-feedandgrain.dev.parameter1.com
       PORT: 80
-      SITE_ID: 5ed294c6c13a4626008b4568
-      # TENANT_KEY: wfc_all
-    hostname: www-sandbox-com.dev.parameter1.com
+      EXPOSED_PORT: 9151
+      LIVERELOAD_PORT: 19151
+      SITE_ID: 637eb6c0f5a3c9a91baa3b5a
+    hostname: www-feedandgrain.dev.parameter1.com
     ports:
-      - "9951:80"
-      - "19951:19951"
+      - "9151:80"
+      - "19151:19151"

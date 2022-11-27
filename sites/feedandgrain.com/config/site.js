@@ -13,11 +13,11 @@ module.exports = {
     enable: process.env.IDX_NAV_ENABLE || false,
   },
   search,
-  company: 'Full Account Name',
+  company: 'Watt Global Media',
   p1events: {
-    tenant: 'dasherized-account-name',
+    tenant: 'watt-global-media',
     enabled: true,
-    cookieDomain: process.env.NODE_ENV === 'production' ? 'parameter1.dev' : '',
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'www.feedandgrain.com' : '',
   },
   logos: {
     navbar: {
@@ -33,7 +33,7 @@ module.exports = {
       ],
     },
     corporate: {
-      alt: 'Full Account Name Logo',
+      alt: 'Watt Global Media Logo',
       href: 'https://example.com',
       src: 'https://p1-cms-assets.imgix.net/files/base/p1/sandbox/image/static/parameter1-logo.png?w=200&auto=format,compress',
       srcset: [
@@ -54,7 +54,7 @@ module.exports = {
     enabled: false,
     directSend: false,
     sendTo: 'support@parameter1.com',
-    // sendFrom: 'parameter1.dev <noreply@parameter1.com>',
+    // sendFrom: 'www.feedandgrain.com <noreply@parameter1.com>',
     // logo: 'https://p1-cms-assets.imgix.net/files/base/p1/sandbox/image/static/lab/lab-logo.png?h=45&auto=format,compress&bg=000000&pad=5',
     // bgColor: '#000000',
   },

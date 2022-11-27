@@ -1,4 +1,4 @@
-const configureNativeX = require('@dasherized-account-name/package-global/config/native-x');
+const configureNativeX = require('@watt-global-media/package-global/config/native-x');
 
 const config = configureNativeX();
 
