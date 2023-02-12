@@ -59,17 +59,62 @@ services:
     environment:
       <<: *env
 
-  fg:
+  feedandgrain:
     <<: *site-cmd
     working_dir: /root/sites/feedandgrain.com
     environment:
       <<: [*env, *env-leonis]
       HOST: www-feedandgrain.dev.parameter1.com
       PORT: 80
-      EXPOSED_PORT: 9151
-      LIVERELOAD_PORT: 19151
-      SITE_ID: 637eb6c0f5a3c9a91baa3b5a
+      EXPOSED_PORT: 9925
+      LIVERELOAD_PORT: 19925
+      SITE_ID: 63daaa66da016482232f9f73
     hostname: www-feedandgrain.dev.parameter1.com
     ports:
-      - "9151:80"
-      - "19151:19151"
+      - "9925:80"
+      - "19925:19925"
+
+  wattagnet:
+    <<: *site-cmd
+    working_dir: /root/sites/wattagnet.com
+    environment:
+      <<: [*env, *env-leonis]
+      HOST: www-wattagnet.dev.parameter1.com
+      PORT: 80
+      EXPOSED_PORT: 9926
+      LIVERELOAD_PORT: 19926
+      SITE_ID: 63daa5abda0164822327dec2
+    hostname: www-wattagnet.dev.parameter1.com
+    ports:
+      - "9926:80"
+      - "19926:19926"
+
+  feedstrategy:
+    <<: *site-cmd
+    working_dir: /root/sites/feedstrategy.com
+    environment:
+      <<: [*env, *env-leonis]
+      HOST: www-feedstrategy.dev.parameter1.com
+      PORT: 80
+      EXPOSED_PORT: 9927
+      LIVERELOAD_PORT: 19927
+      SITE_ID: 63daaa97da016482232fe746
+    hostname: www-feedstrategy.dev.parameter1.com
+    ports:
+      - "9927:80"
+      - "19927:19927"
+
+  petfoodindustry:
+    <<: *site-cmd
+    working_dir: /root/sites/petfoodindustry.com
+    environment:
+      <<: [*env, *env-leonis]
+      HOST: www-petfoodindustry.dev.parameter1.com
+      PORT: 80
+      EXPOSED_PORT: 9927
+      LIVERELOAD_PORT: 19927
+      SITE_ID: 63daa5dfda01648223282de1
+    hostname: www-petfoodindustry.dev.parameter1.com
+    ports:
+      - "9927:80"
+      - "19927:19927"
