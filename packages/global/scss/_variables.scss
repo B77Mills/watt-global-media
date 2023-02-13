@@ -1,15 +1,42 @@
+$marko-web-document-container-max-width: 1300px;
+
+@font-face {
+  font-family: "Montserrat-fallback";
+  size-adjust: 113.39999999999998%;
+  ascent-override: 82%;
+  src: local("Arial");
+}
+
+@font-face {
+  font-family: "Source Sans 4-fallback";
+  size-adjust: 93.75%;
+  ascent-override: 110%;
+  src: local("Arial");
+}
+
 // Fonts
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400&display=swap");
-$skin-font-family-primary: "Fira Sans", sans-serif !default;
-$skin-font-family-secondary: "Fira Sans", sans-serif !default;
+$skin-font-family-primary: "Montserrat", "Montserrat-fallback", sans-serif !default;
+$skin-font-family-secondary: "Montserrat", "Montserrat-fallback", sans-serif !default;
+
+// $skin-font-family-primary: "Source Sans 4", "Source Sans 4-fallback", sans-serif !default;
+// $skin-font-family-secondary: "Source Sans 4", "Source Sans 4-fallback", sans-serif !default;
 
 // Navbar
 $navbarStyle: "navbar-c" !default;
-$theme-site-navbar-primary-type: light;
-$theme-site-navbar-logo-height: 60px !default;
+$theme-site-navbar-primary-type: light !default;
+$theme-site-navbar-primary-link-color: #323239 !default;
+$theme-site-navbar-primary-link-active-color: $primary !default;
+$theme-site-navbar-primary-link-hover-color: $primary !default;
+$theme-site-navbar-primary-bg-color: #f0f1f2 !default;
+$theme-site-navbar-primary-font-size: 14px !default;
+$theme-site-navbar-primary-font-weight: 500 !default;
 $theme-site-navbar-secondary-font-size: 16px !default;
+$theme-site-navbar-secondary-link-color: #0a0a0a !default;
+$theme-site-navbar-logo-height: 30px !default;
+
+
+$theme-card-header-text-transform: uppercase !default;
 
 // Ads
 $leaderboard-min-height-mobile: 100px !default;
 $leaderboard-min-height-desktop: 90px !default;
-$skin-ad-bg-color: white !default;
