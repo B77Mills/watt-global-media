@@ -3,14 +3,8 @@
     "./blocks/marko.json",
     "./layouts/marko.json"
   ],
-  "<global-sponsored-label-logo>": {
-    "template": "./sponsored-label-logo.marko"
-  },
-  "<global-sponsored-section-logo>": {
-    "template": "./sponsored-section-logo.marko"
-  },
-  "<global-sponsored-section-name-logo>": {
-    "template": "./sponsored-section-name-logo.marko"
+  "<global-content-meter-track>": {
+    "template": "./content-meter-track.marko"
   },
   "<global-document>": {
     "template": "./document.marko",
@@ -33,7 +27,16 @@
   "<global-site-header-c>": {
     "template": "./site-header-c.marko"
   },
-  "<global-content-meter-track>": {
-    "template": "./content-meter-track.marko"
+  "<global-site-menu>": {
+    "template": "./site-menu/index.marko"
+  },
+  "<global-sponsored-label-logo>": {
+    "template": "./sponsored-label-logo.marko"
+  },
+  "<global-sponsored-section-logo>": {
+    "template": "./sponsored-section-logo.marko"
+  },
+  "<global-sponsored-section-name-logo>": {
+    "template": "./sponsored-section-name-logo.marko"
   }
 }
