@@ -1,0 +1,53 @@
+import getRecommendedNodes from "../../loaders/get-recommended-nodes";
+
+$ const { apollo } = out.global;
+
+$ const { content } = input;
+$ const title = input.title || "Recommended";
+
+<marko-web-resolve|{ resolved }| promise=getRecommendedNodes(apollo, [{
+  sectionAlias: 'blogs',
+  excludeContentIds:[content.id],
+  limit: 4,
+}, {
+  sectionAlias: 'whitepapers',
+  excludeContentIds:[content.id],
+  limit: 4,
+}, {
+  sectionAlias: 'webinars',
+  excludeContentIds:[content.id],
+  limit: 4,
+}])>
+  $ const { nodes } = resolved;
+
+  <!-- Attempt to assign 2 whitepapers & 2 webinars to recomend to start -->
+  $ const featuredNodes = [
+    ...nodes.filter((node) => node.type === 'whitepaper').sort((a, b) => a.published - b.published).slice(0,2),
+    ...nodes.filter(node => node.type === 'webinar').sort((a, b) => a.published - b.published).slice(0,2)
+  ];
+
+  <!-- Attempt to fill remaining slots with blog content & sort by published. -->
+  $ const fillCounter = 4 - featuredNodes.length;
+  $ const fillerNodes =  [
+    ...nodes.filter(node => node.type === 'blog').sort((a, b) => a.published - b.published),
+  ].sort((a, b) => a.published - b.published).slice(0, fillCounter);
+  $ const orderedNodes = [...featuredNodes, ...fillerNodes].sort((a, b) => a.published - b.published);
+
+  <theme-latest-content-list-block
+    title=title
+    class="sticky-top"
+    nodes=orderedNodes
+  >
+    <@node
+      with-section=true
+      with-dates=false
+      ...input.node
+    />
+    <@native-x
+      indexes=[3, 4]
+      name="default"
+      aliases=input.aliases
+      ...input.nativeX
+    />
+  </theme-latest-content-list-block>
+</marko-web-resolve>
