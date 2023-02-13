@@ -86,24 +86,11 @@ $ const { gamDefer, gtmDefer } = req.query;
       on="newsletter-form-subscription"
       clear-data=true
     />
-    <marko-web-identity-x-context|{ hasUser, isEnabled }|>
-      <if("navbar2" === site.get("navigation.type"))>
-        <global-site-header-2 has-user=hasUser reg-enabled=isEnabled />
-      </if>
-      <else>
-        <global-site-header has-user=hasUser reg-enabled=isEnabled />
-      </else>
-      <theme-site-menu has-user=hasUser reg-enabled=isEnabled />
+    <marko-web-identity-x-context|{ hasUser, user, isEnabled }|>
+      <global-site-header-c has-user=hasUser reg-enabled=isEnabled />
+      <global-site-menu has-user=hasUser reg-enabled=isEnabled />
+      <!-- <theme-site-menu has-user=hasUser reg-enabled=isEnabled /> -->
     </marko-web-identity-x-context>
-    <theme-site-newsletter-menu />
-    <if(contentMeterState && !contentMeterState.isLoggedIn)>
-      <global-content-meter-block
-        views=contentMeterState.views
-        view-limit=contentMeterState.viewLimit
-        display-overlay=contentMeterState.displayOverlay
-        display-gate=contentMeterState.displayGate
-      />
-    </if>
     <${input.aboveContainer} />
   </@above-container>
   <@below-container>
