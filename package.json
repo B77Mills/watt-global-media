@@ -1,8 +1,8 @@
 {
-  "name": "@new-account-template/websites",
-  "description": "Websites for New Account Template",
+  "name": "@watt-global-media/websites",
+  "description": "Websites for WATT Global Media",
   "author": "Brandon Krigbaum <brandon@parameter1.com>",
-  "repository": "https://github.com/parameter1/new-account-template-websites.git",
+  "repository": "https://github.com/parameter1/watt-global-media-websites.git",
   "license": "MIT",
   "private": true,
   "root": true,
