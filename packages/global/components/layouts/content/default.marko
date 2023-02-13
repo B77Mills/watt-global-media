@@ -1,21 +1,17 @@
 import { getAsArray, get } from "@parameter1/base-cms-object-path";
-import contentIframe from "@watt-global-media/package-global/utils/content-iframe";
 import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/utils/get-content-preview";
+import contentIframe from "@watt-global-media/package-global/utils/content-iframe";
 
-import { cmShowOverlay, cmRestrictContentByReg, cmTruncateBody } from "../../../utils/content-meter-helpers";
-
-$ const { site, contentMeterState } = out.global;
-$ const showOverlay = cmShowOverlay(contentMeterState);
+$ const { site, apollo, contentMeterState } = out.global;
 $ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
 
-$ const displayPrimaryImage = ["media-gallery"].includes(type) ? false : true;
+$ const displayPrimaryImage = ["media-gallery"].includes(type) ? false : false;
 $ const displayPublishedDate = ["company", "contact", "whitepaper"].includes(type) ? false : true;
 $ const displayReadNext = showReadNextBlock && ["article"].includes(type);
 $ const displaySocialShare = ["contact"].includes(type) ? false : true;
-$ const displayComments = ["contact"].includes(type) ? false : false;
-$ const displayNewsletterSignup = ["contact"].includes(type) || showOverlay ? false : true;
-$ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type);
+$ const displayCompany = ["press-release", "product"].includes(type);
+$ const shouldInjectAds = ["article", "blog", "media-gallery", "news", "product"].includes(type);
 
 <global-content-wrapper-layout
   id=id
@@ -23,135 +19,125 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
   page-node=pageNode
   ...rest
 >
-  <!-- <@section|{ aliases }| modifiers=["first-sm"]>
-    <if(!showOverlay)>
-      <theme-gam-define-display-ad
-        name="leaderboard"
-        position="content_page"
-        aliases=aliases
-        modifiers=["inter-block"]
-      />
-    </if>
-  </@section> -->
+  <@section|{ aliases }| modifiers=["first-sm"]>
+    <theme-gam-define-display-ad
+      name="top-leaderboard"
+      position="content_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
 
   <@section|{ blockName, content, aliases, authors }| modifiers=["content-header"]>
     $ const { primarySection } = content;
     <div class="content-page-header">
       <theme-content-page-breadcrumbs section=primarySection />
       <marko-web-content-name tag="h1" block-name=blockName obj=content />
+      <marko-web-content-teaser tag="p" class="page-wrapper__deck" obj=content />
+      <if(displayCompany)>
+        <theme-content-attribution obj=content elements=["company"] />
+      </if>
       <if(type !== "contact")>
         <if(authors.length === 1)>
-          <theme-author-published-node author=authors[0] content=content lazyload=false />
+          <theme-author-published-node author=authors[0] content=content lazyload=false display-updated-date=false format="MMMM D, YYYY" />
         </if>
         <else-if(authors.length > 1)>
-          <default-theme-content-attribution obj=content elements=["authors"] />
+          <theme-content-attribution obj=content elements=["authors"] />
         </else-if>
       </if>
-      <if(displayPublishedDate && authors.length !== 1)>
-        <default-theme-page-dates|{ blockName }|>
-          <theme-content-published-node block-name=blockName obj=content />
-        </default-theme-page-dates>
+      <if(type === "event")>
+        <theme-page-dates|{ blockName }|>
+          <marko-web-content-starts tag="span" block-name=blockName obj=content />
+          <if(content.starts !== content.ends)>
+            <marko-web-content-ends tag="span" block-name=blockName obj=content />
+          </if>
+        </theme-page-dates>
       </if>
+      <else-if(displayPublishedDate && authors.length !== 1)>
+        <theme-page-dates|{ blockName }|>
+          <theme-content-published-node block-name=blockName obj=content display-updated-date=false format="MMMM D, YYYY" />
+        </theme-page-dates>
+      </else-if>
+
       <global-sponsored-section-logo alias=primarySection.alias modifiers=["content-page"] class="mt-3" />
     </div>
   </@section>
 
   <@section|{ aliases, content, authors }| modifiers=["content-body"]>
     $ const { primarySection } = content;
+    <div class="row">
+      <div class="col-lg-8">
+        <global-content-contact-details obj=content />
         <div class="content-page-body">
-          <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
-            <if(!showOverlay)>
-              <if(content.embedCode)>
-                $ const iframeContent = contentIframe(content);
-                <marko-web-content-embed-code block-name=blockName obj=iframeContent />
-              </if>
-              <else-if(type === "media-gallery")>
-                <!-- <marko-web-image-slider images=images /> -->
-              </else-if>
-              <else-if(displayPrimaryImage)>
-                $ let forceDisplay = "none";
-                $ if (type === "contact") forceDisplay = "left";
-                $ if (type === "video") forceDisplay = "none";
-                <theme-primary-image-block
-                  obj=content.primaryImage
-                  force-display=forceDisplay
-                />
-              </else-if>
+          <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+            <if(content.embedCode)>
+              $ const iframeContent = contentIframe(content);
+              <marko-web-content-embed-code block-name=blockName obj=iframeContent />
             </if>
-            <!-- $ const requiresRegistration = cmRestrictContentByReg(contentMeterState, content); -->
-            $ const requiresRegistration = true;
-            $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
-            <marko-web-identity-x-access|context|
-              enabled=requiresRegistration
-              required-access-level-ids=accessLevels
-            >
-              <if(cmTruncateBody(contentMeterState))>
-                $ const body = showOverlay ? getContentPreview({ body: content.body, selector: "p:lt(7)" }) : getContentPreview({ body: content.body, selector: "p:nth-of-type(1)" });
-                <marko-web-content-body block-name=blockName obj={ body } />
+            <else-if(type === "media-gallery")>
+              <!-- <marko-web-image-slider images=images /> -->
+            </else-if>
+            <else-if(displayPrimaryImage)>
+              $ let forceDisplay;
+              $ if (type === "contact") forceDisplay = "left";
+              $ if (type === "video") forceDisplay = "none";
+              <theme-primary-image-block
+                obj=content.primaryImage
+                force-display=forceDisplay
+              />
+            </else-if>
 
-                <div class="content-page-preview-overlay" />
-                <if(!showOverlay)>
-                  <theme-content-page-gate
-                    can-access=context.canAccess
-                    is-logged-in=context.isLoggedIn
-                    has-required-access-level=context.hasRequiredAccessLevel
-                    requires-access-level=context.requiresAccessLevel
-                    requires-user-input=context.requiresUserInput
-                    messages=context.messages
-                    user-input-title="Step 2 of 2"
-                    profile-call-to-action=""
-                    profile-button-label="Create Account"
-                    profile-event-name="content_meter_profile"
-                  />
-                </if>
-              </if>
-              <else-if(!context.canAccess || context.requiresUserInput)>
+            <if(content.transcript)>
+              <marko-web-link href=`#transcript-${id}` class="btn btn-transcript mt-block mb-2" title="Transcript">
+                <marko-web-icon name="file" modifiers=["lg"] /> Transcript
+              </marko-web-link>
+            </if>
+
+            $ const requiresRegistration = get(content, "userRegistration.isCurrentlyRequired");
+            <marko-web-identity-x-access|context| enabled=requiresRegistration>
+              <if(!context.canAccess || context.requiresUserInput)>
+              <!-- <if(false)> -->
                 $ const body = getContentPreview({ body: content.body, selector: "p:nth-of-type(1)" });
                 <marko-web-content-body block-name=blockName obj={ body } />
 
                 <div class="content-page-preview-overlay" />
                 <theme-content-page-gate
+                  profile-confirmation=false
                   can-access=context.canAccess
                   is-logged-in=context.isLoggedIn
                   has-required-access-level=context.hasRequiredAccessLevel
                   requires-access-level=context.requiresAccessLevel
                   requires-user-input=context.requiresUserInput
                   messages=context.messages
+                  content-gate-type="default"
                 />
-              </else-if>
+              </if>
               <else>
-
                 $ const bodyId = `content-body-${content.id}`;
-
-                <if(shouldInjectAds)>
-
-                  $ const desktopCounts = [350, 1500, 2750, 4500, 6250, 8000, 9750, 11500, 13250, 15000, 16750, 18500];
-                  $ const mobileCounts = [250, 1650, 2950, 4250, 5550, 6850, 8150, 9450, 10750, 12050, 13350, 14650, 15950, 17250];
-                  <theme-gam-inject-ads selector=`#${bodyId}` detect-embeds=true>
-                    <for|char| of=desktopCounts>
-                      <!-- desktop/tablet only -->
-                      <@inject
-                        at=char
-                        name="inline-content-desktop"
-                        aliases=aliases
-                        modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-                      />
-                    </for>
-
-                    <for|char| of=mobileCounts>
-                      <!-- mobile only -->
-                      <@inject
-                        at=char
-                        name="inline-content-mobile"
-                        aliases=aliases
-                        modifiers=["max-width-970", "margin-auto-x", "inline-content"]
-                      />
-                    </for>
-                  </theme-gam-inject-ads>
+                <theme-body-with-injection
+                  content=content
+                  aliases=aliases
+                  block-name=blockName
+                  selector=bodyId
+                  preventHTMLInjection=!shouldInjectAds
+                  desktopLeaderboardAdName="top-inline-content-desktop"
+                  mobileLeaderboardAdName="top-inline-content-mobile"
+                />
+                <if(content.transcript)>
+                  $ const transcriptId = `content-transcript-${content.id}`;
+                  <div id=`transcript-${id}` class="page-contents__content-transcript">
+                    <marko-web-element block-name="page-contents" name="content-transcript-title">
+                      <marko-web-icon name="file" modifiers=["lg"] /> Transcript
+                    </marko-web-element>
+                    <theme-body-with-injection
+                      content={ body: content.transcript }
+                      aliases=aliases
+                      block-name=blockName
+                      selector=transcriptId
+                      preventHTMLInjection=!shouldInjectAds
+                    />
+                  </div>
                 </if>
-
-                <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
-
                 <!-- needs input -->
                 <if(input.afterBody)>
                   <${input.afterBody}
@@ -163,11 +149,22 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
 
                 $ const sidebars = getAsArray(content, "sidebars").map((sidebar) => sidebar.body);
                 <marko-web-content-sidebars block-name=blockName obj={ sidebars } />
+
+                <!-- Add Transcripts and allow for the ad injection -->
+                <if(content.transcript)>
+                  <div id=`transcript-${id}` class="page-contents__content-transcript">
+                    <marko-web-element block-name="page-contents" name="content-transcript-title">
+                      <marko-web-icon name="file" modifiers=["lg"] /> Transcript
+                    </marko-web-element>
+                    <marko-web-content-transcript obj=content block-name=blockName attrs={ id: transcriptId }  />
+                  </div>
+                </if>
+
                 <if(type === "document" || type === "whitepaper")>
-                    <default-theme-content-download obj=content>
-                      <@wufoo user-name=site.get("wufoo.userName") />
-                      <@link class="btn btn-primary" />
-                    </default-theme-content-download>
+                  <theme-content-download obj=content>
+                    <@wufoo user-name=site.get("wufoo.userName") />
+                    <@link class="btn btn-primary" />
+                  </theme-content-download>
                 </if>
                 <if(type !== "contact")>
                   <for|author| of=authors>
@@ -185,10 +182,6 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                   />
                 </if>
 
-                <if(displayNewsletterSignup)>
-                  <theme-newsletter-signup-banner-block />
-                </if>
-
                 <if(displaySocialShare)>
                   <marko-web-social-sharing
                     path=content.siteContext.path
@@ -197,14 +190,33 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                   />
                 </if>
               </else>
-
             </marko-web-identity-x-access>
-
-            <if(displayComments)>
-              <theme-identity-x-comment-stream content=content />
-            </if>
-          </default-theme-page-contents>
+            <marko-web-identity-x-context|{ hasUser }|>
+              <if(!hasUser)>
+                <theme-newsletter-signup-banner-external-block />
+              </if>
+            </marko-web-identity-x-context>
+          </theme-page-contents>
         </div>
+      </div>
+      <div class="col-lg-4 page-rail page-rail--dual-sticky-top">
+        <div class="page-rail__container page-rail__container--dual-sticky-top">
+          $ const inquiry = site.getAsObject('inquiry');
+          <if(content.type === 'product' && content.company)>
+            <div class="mb-block">
+              <theme-company-inquiry-form-block modifiers=["flush-x"] content=content consent-checkboxes=getAsArray(site, 'config.inquiry.consentCheckboxes') />
+            </div>
+          </if>
+          <!-- <global-recommended-content-block content=content aliases=aliases /> -->
+        </div>
+        <div class="page-rail__container page-rail__container--dual-sticky-top">
+          <!-- <global-recommended-content-block content=content aliases=aliases /> -->
+          <if(content.type != 'product')>
+            <!-- <global-leaders-contextual content-id=id /> -->
+          </if>
+        </div>
+      </div>
+    </div>
   </@section>
 
   <@section|{ content }|>
@@ -212,25 +224,10 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
       content-id=content.id
       section-id=content.primarySection.id
       published=content.published
+      with-native-x=true
+      native-x={ sectionName: 'Sponsored' }
     />
   </@section>
-
-  <!-- <if(showBottomAdBlock && !showOverlay)>
-    <@section|{ aliases }|>
-      <theme-gam-define-display-ad
-        name="rotation"
-        position="content_page"
-        aliases=aliases
-        modifiers=["inter-block"]
-      />
-    </@section>
-  </if> -->
-
-  <!-- <if(showTopStoryBlock)>
-    <@section>
-      <theme-top-stories-block />
-    </@section>
-  </if> -->
 
   <for|s| of=sections>
     <@section|{ blockName, content, aliases }| modifiers=s.modifiers>
