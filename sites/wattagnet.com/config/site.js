@@ -22,15 +22,15 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://p1-cms-assets.imgix.net/files/base/wattglobalmedia/all/image/static/feedstrategy/FSlogo_small_R_200.png?h=45&auto=format,compress',
+      src: 'https://p1-cms-assets.imgix.net/files/base/wattglobalmedia/all/image/static/wattagnet/WATTPoultry-com_logo4c-1.png?h=45&auto=format,compress',
       srcset: [
-        'https://p1-cms-assets.imgix.net/files/base/wattglobalmedia/all/image/static/feedstrategy/FSlogo_small_R_200.png?h=45&auto=format,compress&dpr=2 2x',
+        'https://p1-cms-assets.imgix.net/files/base/wattglobalmedia/all/image/static/wattagnet/WATTPoultry-com_logo4c-1.png?h=45&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
-      src: 'https://p1-cms-assets.imgix.net/files/base/wattglobalmedia/all/image/static/feedstrategy/FSlogo_small_R_200.png?h=60&auto=format,compress',
+      src: 'https://p1-cms-assets.imgix.net/files/base/wattglobalmedia/all/image/static/wattagnet/WATTPoultry-com_logo4c-1.png?h=60&auto=format,compress',
       srcset: [
-        'https://p1-cms-assets.imgix.net/files/base/wattglobalmedia/all/image/static/feedstrategy/FSlogo_small_R_200.png?h=60&auto=format,compress&dpr=2 2x',
+        'https://p1-cms-assets.imgix.net/files/base/wattglobalmedia/all/image/static/wattagnet/WATTPoultry-com_logo4c-1.png?h=60&auto=format,compress&dpr=2 2x',
       ],
     },
     corporate: corporate.logo,
@@ -49,7 +49,7 @@ module.exports = {
     directSend: false,
     sendTo: 'support@parameter1.com',
     // sendFrom: 'www.feedandgrain.com <noreply@parameter1.com>',
-    // logo: 'https://p1-cms-assets.imgix.net/files/base/wattglobalmedia/all/image/static/feedstrategy/FSlogo_small_R_200.png?h=45&auto=format,compress&bg=000000&pad=5',
+    // logo: 'https://p1-cms-assets.imgix.net/files/base/wattglobalmedia/all/image/static/wattagnet/WATTPoultry-com_logo4c-1.png?h=45&auto=format,compress&bg=000000&pad=5',
     // bgColor: '#000000',
   },
   setSearchSortFieldToScore: true,
