@@ -1,0 +1,42 @@
+.site-navbar {
+  &__items {
+    &--primary {
+      justify-content: center;
+    }
+  }
+  &--primary {
+    border-top: 1px solid #e5e7eb;
+  }
+  &--top {
+    box-shadow: 0 0 8px 0 #78788c33;
+  }
+}
+
+.site-header {
+  border-bottom: none;
+}
+
+.ad-container {
+  $self: &;
+  &--inter-block {
+    background: repeating-linear-gradient(-45deg,white,white 0.375rem,#f5f5fa 0.406rem,#f5f5fa 0.486rem);
+    border-bottom: 1px solid #f5f5fa;
+  }
+  // &--template-leaderboard>:first-child {
+  //   padding-top: 14px;
+  //   padding-bottom: 14px;
+  // }
+  // &--template-leaderboard>:first-child:before {
+  //   display: none;
+  // }
+}
+
+.page-wrapper {
+  &__section {
+    &--break-container {
+      @media (min-width: 1300px) {
+        padding: 1rem 7rem 2rem;
+      }
+    }
+  }
+}
