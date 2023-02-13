@@ -81,3 +81,59 @@ jobs:
           RANCHER_CLUSTERID: ${{ secrets.RANCHER_CLUSTERID_BASECMS }}
           TRAVIS_REPO_SLUG: ${{ github.repository }}
           TRAVIS_TAG: ${{ needs.vars.outputs.version }}
+
+  ######################
+  # Add websites here! #
+  ######################
+
+  build-sites:
+    needs: [vars]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        site:
+          - feedandgrain.com
+          - wattagnet.com
+          - petfoodindustry.com
+          - feedstrategy.com
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Log in to ECR
+        uses: docker/login-action@v1
+        with:
+          registry: ${{ env.ECR_REGISTRY }}
+          username: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          password: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Build docker image
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          build-args: |
+            SITE=${{ matrix.site }}
+          tags: ${{ env.ECR_REGISTRY }}/${{ env.IMG_PREFIX }}-${{ matrix.site }}:${{ needs.vars.outputs.version }}
+
+  deploy-sites:
+    needs: [vars, build-sites]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        namespace:
+          - staging-websites-leonis
+        site:
+          - feedandgrain.com
+          - wattagnet.com
+          - petfoodindustry.com
+          - feedstrategy.com
+
+    steps:
+      - name: Deploy to Kubernetes
+        run: |
+          npx @parameter1/rancher2cli dl \
+            --wait --namespace ${{ matrix.namespace }} \
+            basecms-website ${{ env.IMG_PREFIX }}-${{ matrix.site }} \
+            ${{ env.ECR_REGISTRY }}/${{ env.IMG_PREFIX }}-${{ matrix.site }}:${{ needs.vars.outputs.version }}
+        env:
+          RANCHER_CLUSTERID: c-7p6pt
+          RANCHER_TOKEN: ${{ secrets.RANCHER_TOKEN }}
+          RANCHER_URL: ${{ secrets.RANCHER_URL }}
