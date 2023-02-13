@@ -4,13 +4,15 @@ const subscribe = {
 };
 
 const topics = [
-  { href: '/topic', label: 'Topic' },
+  { href: '/poultry-meat', label: 'Poultry Meat' },
+  { href: '/egg', label: 'Egg' },
 ];
 
 const resources = [
   { href: '/webinars', label: 'Webinars' },
+  { href: '/blogs', label: 'Blogs' },
+  { href: '/resources', label: 'Resources' },
 ];
-
 
 const utilities = [
   { href: '/utility-1', label: 'Utility 1' },

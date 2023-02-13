@@ -4,16 +4,11 @@ const subscribe = {
 };
 
 const topics = [
-  { href: '/antibiotic-free-meat-production', label: 'Antibiotic-free Meat Production' },
-  { href: '/animal-nutrition-formulation', label: 'Nutrition & Formulation' },
-  { href: '/livestock-feed-manufacturing', label: 'Feed Manufacturing' },
-  { href: '/animal-feed-additives', label: 'Feed Additives' },
-  // { href: '/global-feed-production-trends', label: 'Global Feed Production Trends' },
-  { href: '/animal-diseases-health', label: 'Diseases & Health' },
+  { href: '/nutrition', label: 'Nutrition' },
+  { href: '/safety-quality', label: 'Safety & Quality' },
 ];
 
 const resources = [
-  { href: '/top-feed-companies', label: 'Top Feed Companies' },
   { href: '/webinars', label: 'Webinars' },
 ];
 
