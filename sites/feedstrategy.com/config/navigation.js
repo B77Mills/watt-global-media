@@ -4,16 +4,17 @@ const subscribe = {
 };
 
 const topics = [
-  { href: '/topic-1', label: 'Topic 1' },
-  { href: '/topic-2', label: 'Topic 2' },
-  { href: '/topic-3', label: 'Topic 3' },
-  { href: '/topic-4', label: 'Topic 4' },
-  { href: '/topic-5', label: 'Topic 5' },
+  { href: '/antibiotic-free-meat-production', label: 'Antibiotic-free Meat Production' },
+  { href: '/animal-nutrition-formulation', label: 'Nutrition & Formulation' },
+  { href: '/livestock-feed-manufacturing', label: 'Feed Manufacturing' },
+  { href: '/animal-feed-additives', label: 'Feed Additives' },
+  // { href: '/global-feed-production-trends', label: 'Global Feed Production Trends' },
+  { href: '/animal-diseases-health', label: 'Diseases & Health' },
 ];
 
 const resources = [
-  { href: '/resource-1', label: 'Resource 1' },
-  { href: '/resource-2', label: 'Resource 2' },
+  { href: '/top-feed-companies', label: 'Top Feed Companies' },
+  { href: '/webinars', label: 'Webinars' },
 ];
 
 const utilities = [
@@ -43,7 +44,7 @@ const desktopMenu = {
 };
 
 module.exports = {
-  type: 'navbar2',
+  type: 'navbar-c',
   promos: [
     {
       title: subscribe.label,
@@ -58,7 +59,7 @@ module.exports = {
     items: topics,
   },
   secondary: {
-    items: [],
+    items: resources,
   },
   tertiary: {
     items: [],
