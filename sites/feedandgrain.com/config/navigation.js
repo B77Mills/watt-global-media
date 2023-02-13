@@ -4,16 +4,17 @@ const subscribe = {
 };
 
 const topics = [
-  { href: '/topic-1', label: 'Topic 1' },
-  { href: '/topic-2', label: 'Topic 2' },
-  { href: '/topic-3', label: 'Topic 3' },
-  { href: '/topic-4', label: 'Topic 4' },
-  { href: '/topic-5', label: 'Topic 5' },
+  { href: '/grains', label: 'Grains' },
+  { href: '/feed', label: 'Feed' },
+  { href: '/safety', label: 'Safety' },
+  { href: '/government', label: 'Government' },
+  { href: '/commerce', label: 'Commerce' },
 ];
 
 const resources = [
-  { href: '/resource-1', label: 'Resource 1' },
-  { href: '/resource-2', label: 'Resource 2' },
+  { href: '/webinars', label: 'Webinars' },
+  { href: '/videos', label: 'Videos' },
+  { href: '/directory', label: 'Buyer\'s Guide' },
 ];
 
 const utilities = [
@@ -43,7 +44,7 @@ const desktopMenu = {
 };
 
 module.exports = {
-  type: 'navbar2',
+  type: 'navbar-c',
   promos: [
     {
       title: subscribe.label,
@@ -58,7 +59,7 @@ module.exports = {
     items: topics,
   },
   secondary: {
-    items: [],
+    items: resources,
   },
   tertiary: {
     items: [],
