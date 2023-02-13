@@ -111,10 +111,10 @@ services:
       <<: [*env, *env-leonis]
       HOST: www-petfoodindustry.dev.parameter1.com
       PORT: 80
-      EXPOSED_PORT: 9927
-      LIVERELOAD_PORT: 19927
+      EXPOSED_PORT: 9928
+      LIVERELOAD_PORT: 19928
       SITE_ID: 63daa5dfda01648223282de1
     hostname: www-petfoodindustry.dev.parameter1.com
     ports:
-      - "9927:80"
-      - "19927:19927"
+      - "9928:80"
+      - "19928:19928"
