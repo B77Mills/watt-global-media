@@ -6,10 +6,17 @@ const subscribe = {
 const topics = [
   { href: '/nutrition', label: 'Nutrition' },
   { href: '/safety-quality', label: 'Safety & Quality' },
+  { href: '/production', label: 'Production' },
+  { href: '/packaging', label: 'Packaging' },
+  { href: '/marketing-branding', label: 'Marketing/Branding' },
+  { href: '/lawsuits', label: 'Lawsuits' },
+  { href: '/sustainability', label: 'Sustainability' },
 ];
 
 const resources = [
   { href: '/webinars', label: 'Webinars' },
+  { href: '/whitepapers', label: 'White Papers' },
+
 ];
 
 const utilities = [
