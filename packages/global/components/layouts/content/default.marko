@@ -19,14 +19,14 @@ $ const shouldInjectAds = ["article", "blog", "media-gallery", "news", "product"
   page-node=pageNode
   ...rest
 >
-  <@section|{ aliases }| modifiers=["first-sm"]>
+  <!-- <@section|{ aliases }| modifiers=["first-sm"]>
     <theme-gam-define-display-ad
       name="top-leaderboard"
       position="content_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-  </@section>
+  </@section> -->
 
   <@section|{ blockName, content, aliases, authors }| modifiers=["content-header"]>
     $ const { primarySection } = content;
@@ -120,8 +120,6 @@ $ const shouldInjectAds = ["article", "blog", "media-gallery", "news", "product"
                   block-name=blockName
                   selector=bodyId
                   preventHTMLInjection=!shouldInjectAds
-                  desktopLeaderboardAdName="top-inline-content-desktop"
-                  mobileLeaderboardAdName="top-inline-content-mobile"
                 />
                 <if(content.transcript)>
                   $ const transcriptId = `content-transcript-${content.id}`;
