@@ -1,7 +1,7 @@
 const configureIdentityX = require('@watt-global-media/package-global/config/identity-x');
 
 module.exports = configureIdentityX({
-  appId: '5d1b86070ce467bff670a052',
+  appId: '63e9757511972697a2af0a8a',
   requiredServerFields: [
     'givenName',
     'familyName',
