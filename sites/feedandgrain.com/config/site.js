@@ -1,3 +1,4 @@
+const corporate = require('@watt-global-media/package-global/config/corporate');
 const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
@@ -13,7 +14,7 @@ module.exports = {
     enable: process.env.IDX_NAV_ENABLE || false,
   },
   search,
-  company: 'Watt Global Media',
+  company: corporate.name,
   p1events: {
     tenant: 'watt-global-media',
     enabled: true,
@@ -21,25 +22,18 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://p1-cms-assets.imgix.net/files/base/p1/sandbox/image/static/sandbox-logo.png?h=45&auto=format,compress',
+      src: 'https://p1-cms-assets.imgix.net/files/base/wattglobalmedia/all/image/static/feedandgrain/logo-fg-white.svg?h=45&auto=format,compress',
       srcset: [
-        'https://p1-cms-assets.imgix.net/files/base/p1/sandbox/image/static/sandbox-logo.png?h=90&auto=format,compress 2x',
+        'https://p1-cms-assets.imgix.net/files/base/wattglobalmedia/all/image/static/feedandgrain/logo-fg-white.svg?h=90&auto=format,compress 2x',
       ],
     },
     footer: {
-      src: 'https://p1-cms-assets.imgix.net/files/base/p1/sandbox/image/static/sandbox/sandbox-logo.png?h=60&auto=format,compress',
+      src: 'https://p1-cms-assets.imgix.net/files/base/wattglobalmedia/all/image/static/feedandgrain/sandbox/logo-fg-white.svg?h=60&auto=format,compress',
       srcset: [
-        'https://p1-cms-assets.imgix.net/files/base/p1/sandbox/image/static/sandbox-logo.png?h=120&auto=format,compress 2x',
+        'https://p1-cms-assets.imgix.net/files/base/wattglobalmedia/all/image/static/feedandgrain/logo-fg-white.svg?h=120&auto=format,compress 2x',
       ],
     },
-    corporate: {
-      alt: 'Watt Global Media Logo',
-      href: 'https://example.com',
-      src: 'https://p1-cms-assets.imgix.net/files/base/p1/sandbox/image/static/parameter1-logo.png?w=200&auto=format,compress',
-      srcset: [
-        'https://p1-cms-assets.imgix.net/files/base/p1/sandbox/image/static/parameter1-logo.png?w=200&auto=format,compress&dpr=2 2x',
-      ],
-    },
+    corporate: corporate.logo,
   },
   socialMediaLinks: [
   ],
@@ -55,7 +49,7 @@ module.exports = {
     directSend: false,
     sendTo: 'support@parameter1.com',
     // sendFrom: 'www.feedandgrain.com <noreply@parameter1.com>',
-    // logo: 'https://p1-cms-assets.imgix.net/files/base/p1/sandbox/image/static/lab/lab-logo.png?h=45&auto=format,compress&bg=000000&pad=5',
+    // logo: 'https://p1-cms-assets.imgix.net/files/base/wattglobalmedia/all/image/static/feedandgrain/logo-fg-white.svg?h=45&auto=format,compress&bg=000000&pad=5',
     // bgColor: '#000000',
   },
   setSearchSortFieldToScore: true,
