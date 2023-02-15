@@ -2,6 +2,7 @@ const corporate = require('@watt-global-media/package-global/config/corporate');
 const navigation = require('./navigation');
 const gam = require('./gam');
 const nativeX = require('./native-x');
+// const newsletter = require('./newsletter');
 const identityX = require('./identity-x');
 const search = require('./search');
 
@@ -9,6 +10,7 @@ module.exports = {
   navigation,
   gam,
   nativeX,
+  // newsletter,
   identityX,
   idxNavItems: {
     enable: process.env.IDX_NAV_ENABLE || false,
