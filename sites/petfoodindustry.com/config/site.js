@@ -36,6 +36,9 @@ module.exports = {
     corporate: corporate.logo,
   },
   socialMediaLinks: [
+    { provider: 'facebook', href: 'https://www.facebook.com/PetfoodIndustryCommunity' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/groups/5099353/' },
+    { provider: 'youtube', href: 'https://www.youtube.com/user/PetFoodIndustryTV' },
   ],
   podcastLinks: [],
   gcse: {

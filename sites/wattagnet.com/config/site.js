@@ -36,6 +36,9 @@ module.exports = {
     corporate: corporate.logo,
   },
   socialMediaLinks: [
+    { provider: 'facebook', href: 'https://www.facebook.com/WATTPoultry' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/groups/4855866/' },
+    { provider: 'youtube', href: 'https://www.youtube.com/user/WattPoultryTV' },
   ],
   podcastLinks: [],
   gcse: {

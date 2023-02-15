@@ -36,6 +36,9 @@ module.exports = {
     corporate: corporate.logo,
   },
   socialMediaLinks: [
+    { provider: 'facebook', href: 'https://www.facebook.com/feedandgrain/' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/company/feed-&-grain/' },
+    { provider: 'youtube', href: 'https://www.youtube.com/channel/UCGqzQInmKn0woX9iYDG9Uzg/featured' },
   ],
   podcastLinks: [],
   gcse: {
