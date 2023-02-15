@@ -58,14 +58,14 @@ $ const perPage = 12;
     </theme-section-feed-block>
   </@section>
 
-  <@section|{ aliases }|>
+  <!-- <@section|{ aliases }|>
     <theme-gam-define-display-ad
       name="rotation"
       position="section_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-  </@section>
+  </@section> -->
 
   <@section>
     <theme-section-feed-block alias=alias>
@@ -83,14 +83,14 @@ $ const perPage = 12;
     </theme-section-feed-block>
   </@section>
 
-  <@section|{ aliases }|>
+  <!-- <@section|{ aliases }|>
     <theme-gam-define-display-ad
       name="rotation"
       position="section_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-  </@section>
+  </@section> -->
 
   <@section>
     <theme-section-feed-block alias=alias>
@@ -105,7 +105,7 @@ $ const perPage = 12;
     </theme-section-feed-block>
   </@section>
 
-  <@section>
+  <!-- <@section>
     <theme-top-stories-block query-params={ optionName: "Pinned" } />
   </@section>
 
@@ -116,7 +116,7 @@ $ const perPage = 12;
       aliases=aliases
       modifiers=["inter-block"]
     />
-  </@section>
+  </@section> -->
 
   <for|s| of=sections>
     <@section|{ blockName, section, aliases }| modifiers=s.modifiers>
@@ -128,12 +128,12 @@ $ const perPage = 12;
     </@section>
   </for>
 
-  <@section|{ aliases }|>
+  <!-- <@section|{ aliases }|>
     <theme-gam-define-display-ad
       name="rotation"
       position="section_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-  </@section>
+  </@section> -->
 </global-website-section-default-layout>
