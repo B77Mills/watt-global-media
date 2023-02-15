@@ -3,7 +3,7 @@ const renderBlock = require('@parameter1/base-cms-marko-web-theme-monorail/route
 const search = require('@parameter1/base-cms-marko-web-theme-monorail/routes/search');
 const taxonomy = require('@parameter1/base-cms-marko-web-theme-monorail/routes/taxonomy');
 const omedaNewsletters = require('@parameter1/base-cms-marko-web-omeda/routes/omeda-newsletters');
-const feed = require('./feed');
+const rss = require('./rss');
 const nativeX = require('./native-x');
 const printContent = require('./print-content');
 const publicFiles = require('./public-files');
@@ -11,8 +11,8 @@ const redirects = require('./redirects');
 const staticPage = require('./static-page');
 
 module.exports = (app, siteConfig) => {
-  // Feed
-  feed(app);
+  // rss
+  rss(app);
 
   // Omeda newsletter signup
   omedaNewsletters(app);

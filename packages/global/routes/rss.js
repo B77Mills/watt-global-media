@@ -7,7 +7,7 @@ const moment = require('moment');
 module.exports = (app) => {
   const parseEmbeddedMedia = get(app, 'locals.parseEmbeddedMedia');
   const renderBody = isFn(parseEmbeddedMedia) ? parseEmbeddedMedia : v => v;
-  app.get('/feed', asyncRoute(async (req, res) => {
+  app.get('/rss', asyncRoute(async (req, res) => {
     const FEED = gql`
       query Feed($input: WebsiteScheduledContentQueryInput = {}, $siteId: ObjectID!) {
         websiteSite(input: { id: $siteId }) {
@@ -125,7 +125,7 @@ module.exports = (app) => {
       `<rss ${rssAttributes}>`,
       '<channel>',
       `<title>${siteName}</title>`,
-      `<atom:link href="${siteUrl}/feed/" rel="self" type="application/rss+xml" />`,
+      `<atom:link href="${siteUrl}/rss/" rel="self" type="application/rss+xml" />`,
       `<link>${siteUrl}</link>`,
       `<description>${siteName}</description>`,
       `<lastBuildDate>${lastBuildDate}</lastBuildDate>`,
