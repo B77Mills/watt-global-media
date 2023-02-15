@@ -70,12 +70,12 @@ $ const navigation = {
           before="Subscribe"
         />
       </if> -->
-      <default-theme-site-navbar-items
+      <!-- <default-theme-site-navbar-items
         items=site.getAsArray("navigation.user.items")
         modifiers=["user"]
         reg-enabled=input.regEnabled
         has-user=input.hasUser
-      />
+      /> -->
       <marko-web-link href="/search">
         <button class="btn btn-lg" type="submit" aria-label="Search">
           <marko-web-icon name="search" modifiers=["dark"] />
@@ -88,15 +88,14 @@ $ const navigation = {
         icon-modifiers=["lg"]
         icon-name="three-bars"
       />
-      <if (input.hasUser)>
-        <!-- Add icon link to profile -->
+      <!-- <if (input.hasUser)>
         <a href="/user/profile" class="site-navbar__toggler d-flex align-items-center justify-content-center">
           <marko-web-icon name="person" modifiers=["lg"] />
         </a>
       </if>
       <else>
         <marko-web-browser-component name="ThemeNewsletterToggleButton" ssr=true />
-      </else>
+      </else> -->
     </div>
   </default-theme-site-navbar>
 
