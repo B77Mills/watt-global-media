@@ -44,3 +44,11 @@
 .top-stories-row>:first-child {
   margin-top: 11px;
 }
+
+.site-menu {
+  top: 219px;
+  @media (min-width: 700px) {
+    // @todo make this value dynamic
+    top: 226px;
+  }
+}
