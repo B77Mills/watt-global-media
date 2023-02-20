@@ -18,7 +18,7 @@ module.exports = {
   search,
   company: corporate.name,
   p1events: {
-    tenant: 'watt-global-media',
+    tenant: 'watt',
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'www.feedandgrain.com' : '',
   },
