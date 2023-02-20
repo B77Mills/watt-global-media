@@ -42,7 +42,7 @@ module.exports = {
   ],
   podcastLinks: [],
   gtm: {
-    containerId: 'NOT_SET',
+    containerId: 'GTM-52MDT49',
   },
   inquiry: {
     enabled: false,

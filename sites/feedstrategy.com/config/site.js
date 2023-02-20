@@ -41,7 +41,7 @@ module.exports = {
   ],
   podcastLinks: [],
   gtm: {
-    containerId: 'NOT_SET',
+    containerId: 'GTM-W3XJQ98',
   },
   inquiry: {
     enabled: false,
