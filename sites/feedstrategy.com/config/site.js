@@ -40,9 +40,6 @@ module.exports = {
     { provider: 'linkedin', href: 'https://www.linkedin.com/groups/12055651/' },
   ],
   podcastLinks: [],
-  gcse: {
-    id: 'NOT_SET',
-  },
   gtm: {
     containerId: 'NOT_SET',
   },

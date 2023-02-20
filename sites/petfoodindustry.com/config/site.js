@@ -41,9 +41,6 @@ module.exports = {
     { provider: 'youtube', href: 'https://www.youtube.com/user/PetFoodIndustryTV' },
   ],
   podcastLinks: [],
-  gcse: {
-    id: 'NOT_SET',
-  },
   gtm: {
     containerId: 'NOT_SET',
   },

@@ -43,9 +43,6 @@ module.exports = {
     { provider: 'youtube', href: 'https://www.youtube.com/channel/UCGqzQInmKn0woX9iYDG9Uzg/featured' },
   ],
   podcastLinks: [],
-  gcse: {
-    id: 'NOT_SET',
-  },
   gtm: {
     containerId: 'NOT_SET',
   },

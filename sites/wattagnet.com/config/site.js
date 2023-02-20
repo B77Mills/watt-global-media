@@ -41,9 +41,6 @@ module.exports = {
     { provider: 'youtube', href: 'https://www.youtube.com/user/WattPoultryTV' },
   ],
   podcastLinks: [],
-  gcse: {
-    id: 'NOT_SET',
-  },
   gtm: {
     containerId: 'NOT_SET',
   },
