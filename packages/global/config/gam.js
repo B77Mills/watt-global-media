@@ -22,10 +22,8 @@ module.exports = ({
       ],
     })
     .setTemplate('ROTATION', {
-      size: [[970, 250], [300, 250]],
+      size: [300, 250],
       sizeMapping: [
-        { viewport: [980, 0], size: [970, 250] },
-        { viewport: [750, 0], size: [300, 250] },
         { viewport: [300, 0], size: [300, 250] },
       ],
     })
