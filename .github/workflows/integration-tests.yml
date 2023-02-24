@@ -1,0 +1,31 @@
+name: Integration Tests
+
+on:
+  push:
+    branches: ["*"]
+  pull_request:
+    branches: ["*"]
+
+jobs:
+  build-and-test-image:
+    uses: parameter1/actions/.github/workflows/website-build-push-test.yml@main
+    strategy:
+      matrix:
+        ###############################################
+        #v# Make sure this matches the site matrix! #v#
+        ###############################################
+        site:
+          - { id: 63daaa66da016482232f9f73, dir: feedandgrain.com, stack: leonis, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-feedandgrain.com }
+          - { id: 63daaa97da016482232fe746, dir: feedstrategy.com, stack: leonis, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-feedstrategy.com }
+          - { id: 63daa5dfda01648223282de1, dir: petfoodindustry.com, stack: leonis, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-petfoodindustry.com }
+          - { id: 63daa5abda0164822327dec2, dir: wattagnet.com, stack: leonis, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-wattagnet.com }
+        ###############################################
+        #^# Make sure this matches the site matrix! #^#
+        ###############################################
+    with:
+      docker_image: website-${{ matrix.site.dir }}
+      site_id: ${{ matrix.site.id }}
+      site_host: ${{ matrix.site.dir }}
+      infra_stack: ${{ matrix.site.stack }}
+      tenant_key: ${{ matrix.site.tenant }}
+      ecr_registry: ${{ vars.AWS_ECR_REGISTRY }}
