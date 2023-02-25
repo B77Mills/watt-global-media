@@ -15,7 +15,6 @@ x-env-defaults: &env
   NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
   NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
   NODE_ENV: development
-  TENANT_KEY: wattglobalmedia_all
   SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
   SENDGRID_DEV_TO: ${SENDGRID_DEV_TO-support@parameter1.com}
   YARN_CACHE_FOLDER: /.yarn-cache
@@ -62,12 +61,11 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/feedandgrain.com
     environment:
-      <<: [*env, *env-leonis]
+      <<: *env
       HOST: www-feedandgrain.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9925
       LIVERELOAD_PORT: 19925
-      SITE_ID: 63daaa66da016482232f9f73
     hostname: www-feedandgrain.dev.parameter1.com
     ports:
       - "9925:80"
@@ -77,12 +75,11 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/wattagnet.com
     environment:
-      <<: [*env, *env-leonis]
+      <<: *env
       HOST: www-wattagnet.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9926
       LIVERELOAD_PORT: 19926
-      SITE_ID: 63daa5abda0164822327dec2
     hostname: www-wattagnet.dev.parameter1.com
     ports:
       - "9926:80"
@@ -92,12 +89,11 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/feedstrategy.com
     environment:
-      <<: [*env, *env-leonis]
+      <<: *env
       HOST: www-feedstrategy.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9927
       LIVERELOAD_PORT: 19927
-      SITE_ID: 63daaa97da016482232fe746
     hostname: www-feedstrategy.dev.parameter1.com
     ports:
       - "9927:80"
@@ -107,12 +103,11 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/petfoodindustry.com
     environment:
-      <<: [*env, *env-leonis]
+      <<: *env
       HOST: www-petfoodindustry.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9928
       LIVERELOAD_PORT: 19928
-      SITE_ID: 63daa5dfda01648223282de1
     hostname: www-petfoodindustry.dev.parameter1.com
     ports:
       - "9928:80"
