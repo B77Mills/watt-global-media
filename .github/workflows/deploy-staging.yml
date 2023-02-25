@@ -53,10 +53,10 @@ jobs:
         #v# Make sure this matches the site matrix! #v#
         ###############################################
         site:
-          - { id: 63daaa66da016482232f9f73, dir: feedandgrain.com, stack: leonis, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-feedandgrain.com }
-          - { id: 63daaa97da016482232fe746, dir: feedstrategy.com, stack: leonis, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-feedstrategy.com }
-          - { id: 63daa5dfda01648223282de1, dir: petfoodindustry.com, stack: leonis, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-petfoodindustry.com }
-          - { id: 63daa5abda0164822327dec2, dir: wattagnet.com, stack: leonis, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-wattagnet.com }
+          - { dir: feedandgrain.com, stack: leonis, id: 63daaa66da016482232f9f73, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-feedandgrain.com }
+          - { dir: feedstrategy.com, stack: leonis, id: 63daaa97da016482232fe746, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-feedstrategy.com }
+          - { dir: petfoodindustry.com, stack: leonis, id: 63daa5dfda01648223282de1, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-petfoodindustry.com }
+          - { dir: wattagnet.com, stack: leonis, id: 63daa5abda0164822327dec2, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-wattagnet.com }
         ###############################################
         #^# Make sure this matches the site matrix! #^#
         ###############################################
@@ -77,10 +77,10 @@ jobs:
         #v# Make sure this matches the site matrix! #v#
         ###############################################
         site:
-          - { id: 63daaa66da016482232f9f73, dir: feedandgrain.com, stack: leonis, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-feedandgrain.com }
-          - { id: 63daaa97da016482232fe746, dir: feedstrategy.com, stack: leonis, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-feedstrategy.com }
-          - { id: 63daa5dfda01648223282de1, dir: petfoodindustry.com, stack: leonis, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-petfoodindustry.com }
-          - { id: 63daa5abda0164822327dec2, dir: wattagnet.com, stack: leonis, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-wattagnet.com }
+          - { dir: feedandgrain.com, stack: leonis, id: 63daaa66da016482232f9f73, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-feedandgrain.com }
+          - { dir: feedstrategy.com, stack: leonis, id: 63daaa97da016482232fe746, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-feedstrategy.com }
+          - { dir: petfoodindustry.com, stack: leonis, id: 63daa5dfda01648223282de1, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-petfoodindustry.com }
+          - { dir: wattagnet.com, stack: leonis, id: 63daa5abda0164822327dec2, account: wattglobalmedia, tenant: wattglobalmedia_all, rancher_label: watt-global-media-wattagnet.com }
         ###############################################
         #^# Make sure this matches the site matrix! #^#
         ###############################################
