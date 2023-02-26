@@ -3,7 +3,7 @@ const defaultFragment = require('@parameter1/base-cms-marko-web-theme-monorail/g
 
 module.exports = async (apolloClient, paramsSets = []) => {
   if (!paramsSets || !paramsSets.length) return { nodes: [] };
-  const results = await Promise.all(paramsSets.map(params => query(apolloClient, {
+  const results = await Promise.all(paramsSets.map((params) => query(apolloClient, {
     queryFragment: defaultFragment,
     ...params,
   })));
