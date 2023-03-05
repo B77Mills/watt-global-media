@@ -21,11 +21,7 @@ const resources = [
   { href: '/directory', label: 'Buyer\'s Guide' },
 ];
 
-// const utilities = [
-//   { href: '/utility-1', label: 'Utility 1' },
-//   { href: '/utility-2', label: 'Utility 2' },
-//   { href: '/utility-3', label: 'Utility 3' },
-// ];
+const utilities = [];
 
 const grainHandlingProcessing = [
   { href: '/grain-handling-processing/grain-elevators', label: 'Grain Elevators' },
@@ -84,7 +80,7 @@ module.exports = {
     {
       when: ['/grain-handling-processing'],
       secondary: {
-        items: topics,
+        items: resources,
       },
       tertiary: { items: [] },
       primary: {
@@ -93,26 +89,25 @@ module.exports = {
     },
   ],
   toggleMenu: {
-    // col1: {
-    //   label: 'Business Insights',
-    //   items: businessInsights,
-    // },
-    // col2: {
-    //   label: 'Research & Development',
-    //   items: researchDevelopment,
-    // },
-    // col3: {
-    //   label: 'Diagnostic Technologies',
-    //   items: diagnosticTechnologies,
-    // },
-    // col4: {
-    //   label: 'Diseases',
-    //   items: diseases,
-    // },
-    // col5: {
-    //   label: 'Resources',
-    //   items: resources,
-    // },
+    about: {
+      // label: 'About',
+      // items: utilities,
+    },
+    leftColumn: {
+      label: 'Topics',
+      items: [
+        ...topics,
+      ],
+    },
+    midColumn: {
+      items: [
+        ...resources,
+      ],
+    },
+    rightColumn: {
+      label: 'User Tools',
+      items: utilities,
+    },
   },
   footer: {
     col1: {
