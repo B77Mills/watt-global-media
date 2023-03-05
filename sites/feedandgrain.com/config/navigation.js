@@ -1,5 +1,4 @@
 const privacyPolicy = require('@watt-global-media/package-global/config/privacy-policy');
-// const subscribe = require('./subscribe');
 const user = require('@watt-global-media/package-global/config/user');
 
 const subscribe = {
@@ -8,17 +7,18 @@ const subscribe = {
 };
 
 const topics = [
-  { href: '/grains', label: 'Grains' },
-  { href: '/feed', label: 'Feed' },
+  { href: '/grain-handling-processing', label: 'Grain Handling & Processing' },
+  { href: '/animal-feed-manufacturing', label: 'Animal Feed Manufacturing' },
+  { href: '/grain-supply-chain', label: 'Grain Supply Chain' },
+  { href: '/sustainability', label: 'Sustainability' },
   { href: '/safety', label: 'Safety' },
-  { href: '/government', label: 'Government' },
-  { href: '/commerce', label: 'Commerce' },
+  { href: '/business-markets', label: 'Business & Markets' },
 ];
 
 const resources = [
-  { href: '#', label: 'Webinars' },
-  { href: '#', label: 'Videos' },
-  { href: '#', label: 'Buyer\'s Guide' },
+  // { href: '#', label: 'Webinars' },
+  { href: '/blogs', label: 'Blogs' },
+  { href: '/directory', label: 'Buyer\'s Guide' },
 ];
 
 // const utilities = [
@@ -26,6 +26,18 @@ const resources = [
 //   { href: '/utility-2', label: 'Utility 2' },
 //   { href: '/utility-3', label: 'Utility 3' },
 // ];
+
+const grainHandlingProcessing = [
+  { href: '/grain-handling-processing/grain-elevators', label: 'Grain Elevators' },
+  { href: '/grain-handling-processing/grain-milling', label: 'Milling' },
+  { href: '/grain-handling-processing/grain-processing', label: 'Processing' },
+  { href: '/grain-handling-processing/grain-merchandising', label: 'Merchandising' },
+  { href: '/grain-handling-processing/grain-facility-management', label: 'Facility Management' },
+  { href: '/grain-handling-processing/grain-facility-equipment', label: 'Facility Equipment' },
+  { href: '/grain-handling-processing/grain-facility-renovations-builds', label: 'Facility Renovations & Builds' },
+  { href: '/grain-handling-processing/mycotoxin-management', label: 'Mycotoxin Mangagement' },
+  { href: '/grain-handling-processing/biotech-crops', label: 'Biotech Crops' },
+];
 
 const mobileMenu = {
   user: [],
@@ -69,16 +81,16 @@ module.exports = {
     items: [],
   },
   contexts: [
-    // {
-    //   when: ['/business-insights'],
-    //   secondary: {
-    //     items: topics,
-    //   },
-    //   tertiary: { items: [] },
-    //   primary: {
-    //     items: businessInsights,
-    //   },
-    // },
+    {
+      when: ['/grain-handling-processing'],
+      secondary: {
+        items: topics,
+      },
+      tertiary: { items: [] },
+      primary: {
+        items: grainHandlingProcessing,
+      },
+    },
   ],
   toggleMenu: {
     // col1: {
