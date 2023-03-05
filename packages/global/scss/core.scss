@@ -20,7 +20,6 @@
 @import "./components/directory-section-feed";
 @import "./components/newsletter-pushdown";
 @import "./components/site-footer";
-@import "./components/site-menu";
 @import "./components/site-navbar";
 @import "./components/site-navbar-c";
 @import "./components/user";
@@ -452,40 +451,12 @@ label {
 .reveal-ad {
   height: 298px;
 }
-
 .site-menu {
   $self: &;
   top: $theme-site-navbar-logo-height-sm;
   @media (min-width: $skin-desktop-menu-breakpoint) {
     top: $theme-site-navbar-logo-height-sm + 26px;
     z-index: 15000;
-  }
-  &__section {
-    &--primary {
-      #{ $self } {
-        &__item {
-          @media (min-width: $skin-desktop-menu-breakpoint) {
-            font-size: 16px;
-          }
-        }
-      }
-    }
-  }
-  &__contents-desktop {
-    .social-follow__header,
-    #{ $self }__header,
-    #{ $self }__link {
-      font-size: 13px;
-      font-weight: 400;
-    }
-    .social-follow__header,
-    #{ $self }__header {
-      font-weight: 500;
-    }
-    .marko-web-icon--social-follow svg {
-      height: 24px;
-      width: 24px;
-    }
   }
 }
 .page {
