@@ -44,10 +44,6 @@
   }
 }
 
-.top-stories-row>:first-child {
-  margin-top: 11px;
-}
-
 .site-menu {
   top: 219px;
   @media (min-width: 700px) {
@@ -56,5 +52,11 @@
   }
   &__items {
     padding-bottom: 24px;
+  }
+}
+
+.node-list {
+  &__nodes {
+    padding-top: 0;
   }
 }
