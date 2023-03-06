@@ -11,15 +11,6 @@ $ const sections = getAsArray(input, "sections");
   page-node=pageNode
   ...rest
 >
-  <@section|{ aliases }| modifiers=["first-sm"]>
-    <theme-gam-define-display-ad
-      name="leaderboard"
-      position="content_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
   <@section|{ aliases, blockName, content }| modifiers=["content-header"]>
     $ const { primarySection } = content;
     <div class="row">
@@ -84,29 +75,10 @@ $ const sections = getAsArray(input, "sections");
           />
         </if>
         <else>
-          <theme-gam-define-display-ad
-            name="rotation-1"
-            position="content_page"
-            aliases=aliases
-            modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
-            class="mb-block"
-          />
+
         </else>
       </div>
     </div>
-  </@section>
-
-  <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="content_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
-  <@section>
-    <theme-top-stories-block />
   </@section>
 
   <for|s| of=sections>
