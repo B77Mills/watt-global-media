@@ -12,7 +12,7 @@
     "stack": "leonis",
     "key": "wattagnet",
     "deploy": {
-      "staging": true,
+      "staging": false,
       "production": false
     }
   },

@@ -12,7 +12,7 @@
     "stack": "leonis",
     "key": "petfoodindustry",
     "deploy": {
-      "staging": true,
+      "staging": false,
       "production": false
     }
   },
