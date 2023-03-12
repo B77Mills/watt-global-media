@@ -3,6 +3,10 @@
 
 // import theme css
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/core";
+
+// magazine component
+@import "@parameter1/base-cms-marko-web-theme-monorail-magazine/scss/index";
+
 // Bottom Sticky Leader Board
 @import "@parameter1/base-cms-marko-web-gam/scss/fixed-ad-bottom";
 // Reveal Ad CSS
