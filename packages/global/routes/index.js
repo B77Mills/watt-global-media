@@ -1,5 +1,6 @@
 const htmlSitemap = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
 const renderBlock = require('@parameter1/base-cms-marko-web-theme-monorail/routes/render-block');
+const magazine = require('@parameter1/base-cms-marko-web-theme-monorail-magazine/routes');
 const search = require('@parameter1/base-cms-marko-web-theme-monorail/routes/search');
 const taxonomy = require('@parameter1/base-cms-marko-web-theme-monorail/routes/taxonomy');
 const omedaNewsletters = require('@parameter1/base-cms-marko-web-omeda/routes/omeda-newsletters');
@@ -10,7 +11,12 @@ const publicFiles = require('./public-files');
 const redirects = require('./redirects');
 const staticPage = require('./static-page');
 
+const magazineIndex = require('../templates/magazine/index');
+
 module.exports = (app, siteConfig) => {
+  // Magazine
+  magazine(app, { index: magazineIndex });
+
   // rss
   rss(app);
 
