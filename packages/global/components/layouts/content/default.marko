@@ -114,12 +114,14 @@ $ const shouldInjectAds = ["article", "blog", "media-gallery", "news", "product"
               </if>
               <else>
                 $ const bodyId = `content-body-${content.id}`;
+                $ const lazyloadFirstImage = displayPrimaryImage && content.primaryImage;
                 <theme-body-with-injection
                   content=content
                   aliases=aliases
                   block-name=blockName
                   selector=bodyId
                   preventHTMLInjection=!shouldInjectAds
+                  lazyload-first-image=lazyloadFirstImage
                 />
                 <if(content.transcript)>
                   $ const transcriptId = `content-transcript-${content.id}`;
