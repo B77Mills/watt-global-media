@@ -38,9 +38,11 @@ $ const link = { class: "btn btn-primary" }
               <theme-magazine-publication-card-block publication-id=publication.id issue-id=latestIssue.id latest-issue={ buttons: [] } >
                   <@header>
                       <marko-web-block name="magazine-publication-buttons">
-                        <marko-web-link class=link.class href=newsletterUrl target="_blank" title="Subscribe to Newsletters" >
-                          Subscribe to Newsletters
-                        </marko-web-link>
+                        <if(newsletterUrl)>
+                          <marko-web-link class=link.class href=newsletterUrl target="_blank" title="Subscribe to Newsletters" >
+                            Subscribe to Newsletters
+                          </marko-web-link>
+                        </if>
                         <if(get(latestIssue, "publication.subscribeUrl"))>
                           <marko-web-magazine-publication-subscribe-url tag=null obj=latestIssue.publication link=link>
                             Subscribe To Magazine
