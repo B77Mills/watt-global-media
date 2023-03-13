@@ -55,4 +55,14 @@ module.exports = {
     // bgColor: '#000000',
   },
   setSearchSortFieldToScore: true,
+  magazine: {
+    publicationIds: ['640519b0a33405882b1ff5d7'],
+    subscribe: {
+      id: '640519b0a33405882b1ff5d7',
+      name: 'Feed and Grain Magazine',
+      new: {
+        omedasite: 'FGJ_new', // FS_land
+      },
+    },
+  },
 };

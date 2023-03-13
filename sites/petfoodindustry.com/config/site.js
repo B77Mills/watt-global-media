@@ -53,4 +53,14 @@ module.exports = {
     // bgColor: '#000000',
   },
   setSearchSortFieldToScore: true,
+  magazine: {
+    publicationIds: ['NOT_SET'],
+    subscribe: {
+      id: 'NOT_SET',
+      name: 'Petfood Industry Magazine',
+      new: {
+        omedasite: 'PET_land',
+      },
+    },
+  },
 };
