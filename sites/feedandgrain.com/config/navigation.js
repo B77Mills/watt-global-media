@@ -19,6 +19,7 @@ const resources = [
   // { href: '#', label: 'Webinars' },
   { href: '/blogs', label: 'Blogs' },
   { href: '/directory', label: 'Buyer\'s Guide' },
+  { href: '/magazine', label: 'Magazine' },
 ];
 
 const utilities = [];
