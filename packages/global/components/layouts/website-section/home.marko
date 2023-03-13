@@ -16,7 +16,7 @@ $ const { GAM, apollo, i18n } = out.global;
 $ const rightRailHeader = defaultValue(input.rightRailHeader, "Latest News");
 
 $ const promise = homePageTopStoriesLoader(apollo, {
-  featuredParams: { limit: 6 },
+  featuredParams: { limit: 7 },
 });
 <marko-web-resolve|{ resolved: sectionContent }| promise=promise>
   $ const { topStory, featured, ids } = sectionContent;
