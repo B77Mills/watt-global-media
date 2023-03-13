@@ -25,7 +25,8 @@
     "@id": "number",
     "@alias": "string",
     "@name": "string",
-    "@page-node": "object"
+    "@page-node": "object",
+    "@with-featured": "boolean"
   },
   "<global-website-section-products-layout>": {
     "template": "./products.marko",
