@@ -23,14 +23,6 @@ $ const perPage = 12;
     </theme-section-feed-block>
   </@head>
 
-  <!-- <@section|{ aliases }| modifiers=["break-container", "first"]>
-    <global-leaderboard-ad-block
-      position="home_page"
-      aliases=aliases
-      modifiers=["inter-block", "combined-leaderboard"]
-    />
-  </@section> -->
-
   <@section|{ blockName, section, aliases }|>
     <if(input.beforeName)>
       <${input.beforeName}
