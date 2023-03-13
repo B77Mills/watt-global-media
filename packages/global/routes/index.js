@@ -10,6 +10,7 @@ const printContent = require('./print-content');
 const publicFiles = require('./public-files');
 const redirects = require('./redirects');
 const staticPage = require('./static-page');
+const subscribe = require('./subscribe');
 
 const magazineIndex = require('../templates/magazine/index');
 
@@ -46,6 +47,9 @@ module.exports = (app, siteConfig) => {
 
   // Static pages
   staticPage(app);
+
+  // Subscribe
+  subscribe(app);
 
   // HTML Sitemap
   htmlSitemap(app);

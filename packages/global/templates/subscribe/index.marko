@@ -1,0 +1,37 @@
+import latestIssueFragment from "@parameter1/base-cms-marko-web-theme-monorail-magazine/graphql/fragments/magazine-latest-issue";
+
+$ const { site } = out.global;
+
+$ const subscribe = site.get("magazine.subscribe");
+$ const publicationId = site.get("magazine.subscribe.id");
+$ const omedasite = site.get("magazine.subscribe.new.omedasite");
+
+$ const title = `${subscribe.name} Subscription`;
+$ const type = "subscribe";
+$ const description = "";
+
+<marko-web-default-page-layout type=type title=title description=description>
+  <@head>
+    <marko-web-gtm-default-context|{ context }| type=type>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-default-context>
+    <style>
+      .subscr {
+        height: 3090px;
+        display: block;
+        margin: 0 auto;
+        border: 0;
+      }
+    </style>
+  </@head>
+  <@page>
+    <marko-web-page-wrapper>
+      <@section>
+        <h1 class="page-wrapper__title text-center text-uppercase">${title}</h1>
+      </@section>
+      <@section>
+        <iframe scrolling="auto" src=`https://watt.dragonforms.com/loading.do?omedasite=${omedasite}` width="100%" class="subscr"></iframe>
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>
