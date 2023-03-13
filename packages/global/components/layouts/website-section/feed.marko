@@ -3,7 +3,7 @@ import { getAsArray } from "@parameter1/base-cms-object-path";
 $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
 
-$ const { pagination: p } = out.global;
+$ const { pagination: p, nativeX: nxConfig } = out.global;
 $ const perPage = 12;
 
 <global-website-section-default-layout
@@ -45,70 +45,16 @@ $ const perPage = 12;
       />
     </if>
 
-    <theme-section-feed-block alias=alias lazyload=false>
-      <@query-params limit=3 skip=p.skip({ perPage }) />
-    </theme-section-feed-block>
+    <global-section-feed-wrapper aliases=aliases alias=alias flow=input.feedFlow with-ads=input.withAds>
+      <@node ...input.node />
+      <@rail>
+        <theme-newsletter-signup-banner-external-block class="sticky-top mt-2" modifiers=["1-cols"] />
+      </@rail>
+      <@rail>
+        <theme-client-side-most-popular-list-block class="sticky-top" />
+      </@rail>
+    </global-section-feed-wrapper>
   </@section>
-
-  <!-- <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="section_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section> -->
-
-  <@section>
-    <theme-section-feed-block alias=alias>
-      <@query-params limit=3 skip=p.skip({ perPage, skip: 3 }) />
-    </theme-section-feed-block>
-  </@section>
-
-  <@section>
-    <theme-newsletter-signup-banner-large-block />
-  </@section>
-
-  <@section>
-    <theme-section-feed-block alias=alias>
-      <@query-params limit=3 skip=p.skip({ perPage, skip: 6 }) />
-    </theme-section-feed-block>
-  </@section>
-
-  <!-- <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="section_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section> -->
-
-  <@section>
-    <theme-section-feed-block alias=alias>
-      <@query-params limit=3 skip=p.skip({ perPage, skip: 9 }) />
-    </theme-section-feed-block>
-    <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
-      <theme-pagination-controls
-        per-page=perPage
-        total-count=totalCount
-        path=alias
-      />
-    </theme-section-feed-block>
-  </@section>
-
-  <!-- <@section>
-    <theme-top-stories-block query-params={ optionName: "Pinned" } />
-  </@section>
-
-  <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="section_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section> -->
 
   <for|s| of=sections>
     <@section|{ blockName, section, aliases }| modifiers=s.modifiers>
@@ -119,13 +65,4 @@ $ const perPage = 12;
       />
     </@section>
   </for>
-
-  <!-- <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="section_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section> -->
 </global-website-section-default-layout>
