@@ -1183,10 +1183,10 @@
     graphql "^14.7.0"
     graphql-tag "^2.12.6"
 
-"@parameter1/base-cms-marko-web-social-sharing@^4.5.12":
-  version "4.5.12"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-social-sharing/-/base-cms-marko-web-social-sharing-4.5.12.tgz#a63642fbdda3f913aef022303b942aaa81a8b32c"
-  integrity sha512-TmAC6EnPzv1woPEG0uPjkBND7/dSuDJITB338hqVIxRb9KLr9tdS7LLRgFnBEdjBGG3kUdg71GQU20VYsDoamw==
+"@parameter1/base-cms-marko-web-social-sharing@^4.11.1":
+  version "4.11.1"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-social-sharing/-/base-cms-marko-web-social-sharing-4.11.1.tgz#17403937859db8333970f2f1d5d1b1385158c419"
+  integrity sha512-fSyJCH+pdOoLaFNnWJm+Ti8EqnYvUPAHdH7X9t5LBJhVKgE0AVXc4/+nyBbBxH609hsp1/nYPev+JzPNcf1nng==
   dependencies:
     "@parameter1/base-cms-utils" "^4.5.12"
 
@@ -1202,10 +1202,10 @@
     graphql "^14.7.0"
     graphql-tag "^2.12.6"
 
-"@parameter1/base-cms-marko-web-theme-monorail-magazine@^4.5.12":
-  version "4.5.12"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-theme-monorail-magazine/-/base-cms-marko-web-theme-monorail-magazine-4.5.12.tgz#3b6a6e9c45a813108cc9865228ed7db9592ca34f"
-  integrity sha512-zb4JO2XP7ZU9qSye4VrU0oA1kf22Z4IZIGjeHneBllHYDiLRSErR3444sDjZ71g3Iy4ojnFnlRoN8J8WB8wiQg==
+"@parameter1/base-cms-marko-web-theme-monorail-magazine@^4.11.3":
+  version "4.11.3"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-theme-monorail-magazine/-/base-cms-marko-web-theme-monorail-magazine-4.11.3.tgz#b8d6fbe6f4772bceefded1a1b2beaee02e995380"
+  integrity sha512-xHIbU/A6zs8WtK/HQTB/WBjdWNvxxr5SzcLYrCuTmYQmc6X3znVnrZoXXTlN0T4k0kUFUW1Gu9pK8+f9stDEJw==
   dependencies:
     "@parameter1/base-cms-marko-web-gtm" "^4.5.12"
     "@parameter1/base-cms-object-path" "^4.5.12"
@@ -1215,10 +1215,10 @@
     graphql-tag "^2.12.6"
     object-path "^0.11.8"
 
-"@parameter1/base-cms-marko-web-theme-monorail@^4.10.0":
-  version "4.10.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-theme-monorail/-/base-cms-marko-web-theme-monorail-4.10.0.tgz#5295890efd88fcffe07117e6526d80b24b92c903"
-  integrity sha512-rIOtC6nQWjq7JkcXabNOx93+l+SELoHIrpEr4gQqh0mxUxJGV94Ts6PN7IvkcZQ6ovYaTKxjITVoM7GyYnLWpQ==
+"@parameter1/base-cms-marko-web-theme-monorail@^4.11.3":
+  version "4.11.3"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-theme-monorail/-/base-cms-marko-web-theme-monorail-4.11.3.tgz#88ab93a15ce3322615a10e004e06a632313681a6"
+  integrity sha512-ZFQQz9tEWPShyKTaq0jAdQWwbQn2CaAeaWR+xQqUSovIOvhwqDexfseBQyqRrmM3xyy1D2rk+Rq9H7GPGfV8mA==
   dependencies:
     "@parameter1/base-cms-dayjs" "^4.5.12"
     "@parameter1/base-cms-image" "^4.6.0"
@@ -1237,7 +1237,7 @@
     "@parameter1/base-cms-marko-web-recaptcha" "^4.5.12"
     "@parameter1/base-cms-marko-web-reveal-ad" "^4.5.12"
     "@parameter1/base-cms-marko-web-search" "^4.5.12"
-    "@parameter1/base-cms-marko-web-social-sharing" "^4.5.12"
+    "@parameter1/base-cms-marko-web-social-sharing" "^4.11.1"
     "@parameter1/base-cms-object-path" "^4.5.12"
     "@parameter1/base-cms-utils" "^4.5.12"
     "@parameter1/base-cms-web-common" "^4.5.12"
@@ -1249,10 +1249,10 @@
     moment "^2.29.1"
     node-fetch "^2.6.9"
 
-"@parameter1/base-cms-marko-web@^4.11.0":
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web/-/base-cms-marko-web-4.11.0.tgz#65b9251b4e273a96b5eb3f346515f2e70c1d504f"
-  integrity sha512-pXapQgiVwJ+YgNqV2XGbK7iqseYeWW5uzwamkvmPgF3sp7/VCnp8oYw2heF4kvV6LMLT4RBSC9b4t7ZrdObfiA==
+"@parameter1/base-cms-marko-web@^4.11.3":
+  version "4.11.3"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web/-/base-cms-marko-web-4.11.3.tgz#ea4341039ec5d10e149270e854c73a300d258568"
+  integrity sha512-ldJ9HifVwxt0yrnAUzuVfn2tl7cTZyVl6VcNgEpv0pchXz4h5rC6bLTtAmNYylr0bzhnRL6DgZ+aPo5y3st5Fw==
   dependencies:
     "@godaddy/terminus" "^4.11.2"
     "@parameter1/base-cms-apollo-ssr" "^4.5.12"
