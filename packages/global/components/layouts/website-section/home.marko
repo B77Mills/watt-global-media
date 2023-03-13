@@ -92,22 +92,22 @@ $ const promise = homePageTopStoriesLoader(apollo, {
 
           <@section|{ aliases }|>
             <global-section-feed-wrapper aliases=aliases with-pagination=false>
-                <@header>${i18n("More from")} ${config.siteName()}</@header>
-                <@query-params
-                  alias=section.alias
-                  limit=12
-                  optionName=["Pinned", "Standard"]
-                  excludeContentIds=sectionContent.ids
-                  requires-image=true
-                />
-                <@rail>
-                  <!-- <theme-most-popular-list-block class="sticky-top" /> -->
-                </@rail>
-                <@rail>
-                  <!-- <theme-latest-content-list-block alias="videos" title="Latest Videos" class="sticky-top" >
-                    <@node with-section=true with-dates=false />>
-                  </theme-latest-content-list-block> -->
-                </@rail>
+              <@header>${i18n("More from")} ${config.siteName()}</@header>
+              <@query-params
+                alias=section.alias
+                limit=12
+                optionName=["Pinned", "Standard"]
+                excludeContentIds=sectionContent.ids
+                requires-image=true
+              />
+              <@rail>
+                <!-- <theme-most-popular-list-block class="sticky-top" /> -->
+              </@rail>
+              <@rail>
+                <!-- <theme-latest-content-list-block alias="videos" title="Latest Videos" class="sticky-top" >
+                  <@node with-section=true with-dates=false />>
+                </theme-latest-content-list-block> -->
+              </@rail>
             </global-section-feed-wrapper>
           </@section>
 
