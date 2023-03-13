@@ -10,6 +10,7 @@ $ const { config, site } = out.global;
 $ const loader = getAsObject(input, "loader");
 $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
+$ const withFeatured = defaultValue(input.withFeatured, true);
 $ const excludedSectionIds = [];
 $ const { GAM, apollo, i18n } = out.global;
 
@@ -36,8 +37,8 @@ $ const promise = homePageTopStoriesLoader(apollo, {
         <marko-web-page-wrapper>
           <@section class=["mt-3", "mb-3"]>
             <div class="row top-stories-row">
-              <div class="col-lg-5">
-
+              $ const rowOneClass = (withFeatured) ? "col-lg-5" : "col-lg-6";
+              <div class=rowOneClass>
                 <if(topStory.nodes && topStory.nodes.length)>
                   $ const topStoryNode = topStory.nodes[0];
                   $ const heroImageNode = {
@@ -76,17 +77,27 @@ $ const promise = homePageTopStoriesLoader(apollo, {
                   </marko-web-element>
                 </if>
               </div>
-              <div class="col-lg-4">
+              $ const rowTwoClass = (withFeatured) ? "col-lg-4" : "col-lg-6";
+              <div class=rowTwoClass>
                 $ const featuredNodes = featured.nodes;
                 <theme-latest-content-list-block nodes=featuredNodes title="Latest News" >
                   <@query-params exclude-content-ids=ids limit=7 />
                   <!-- <@native-x indexes=[0] name="default" aliases=aliases /> -->
-                  <@node with-section=true with-dates=false display-image=false />
+                  <@node with-section=false with-dates=false display-image=false />
                 </theme-latest-content-list-block>
               </div>
-              <div class="col-lg-3">
-                <!-- <global-dont-miss-block /> -->
-              </div>
+              <if(withFeatured)>
+                <div class="col-lg-3">
+                  <theme-content-card-deck-block
+                    alias="home/featured"
+                    cols=1
+                    query-params={ limit: 2 }
+                    view-more=false
+                  >
+                    <@node with-section=false />
+                  </theme-content-card-deck-block>
+                </div>
+              </if>
             </div>
           </@section>
 
