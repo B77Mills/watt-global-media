@@ -494,4 +494,76 @@ label {
   }
 }
 
-@import "latest";
+.site-navbar {
+  &__items {
+    &--primary {
+      justify-content: center;
+    }
+  }
+  &--primary {
+    border-top: 1px solid #e5e7eb;
+  }
+  &--top {
+    box-shadow: 0 0 8px 0 #78788c33;
+  }
+}
+
+.site-header {
+  border-bottom: none;
+}
+
+.ad-container {
+  $self: &;
+  &--inter-block {
+    background: repeating-linear-gradient(-45deg,white,white 0.375rem,#f5f5fa 0.406rem,#f5f5fa 0.486rem);
+    border-bottom: 1px solid #f5f5fa;
+  }
+  // &--template-leaderboard>:first-child {
+  //   padding-top: 14px;
+  //   padding-bottom: 14px;
+  // }
+  // &--template-leaderboard>:first-child:before {
+  //   display: none;
+  // }
+}
+
+.page-wrapper {
+  &__section {
+    &--break-container {
+      @media (min-width: 1300px) {
+        padding: 1rem 7rem 2rem;
+      }
+    }
+  }
+  &__website-section-name {
+    text-transform: none;
+  }
+}
+
+.site-menu {
+  top: 219px;
+  @media (min-width: 700px) {
+    // @todo make this value dynamic
+    top: 226px;
+  }
+  &__items {
+    padding-bottom: 24px;
+  }
+}
+
+.node-list {
+  &__nodes {
+    padding-top: 0;
+  }
+}
+
+.card-deck-flow {
+  $self: &;
+  &--1-cols {
+    #{ $self }__node:first-child {
+      border-bottom: 1px solid #e3e4e5;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
