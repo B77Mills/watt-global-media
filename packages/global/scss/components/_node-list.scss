@@ -1,0 +1,42 @@
+.node-list {
+  $self: &;
+
+  &__header {
+    /*! critical */
+    padding-bottom: 0;
+  }
+
+  &__nodes {
+    /*! critical */
+    padding-top: 0;
+  }
+
+  &__node {
+    padding: 1.25rem;
+  }
+
+  &--wufoo, &--issue-archives {
+    #{ $self }__header {
+      @include skin-typography($style: "header-2");
+      font-family: $skin-font-family-primary;
+      margin-bottom: 16px;
+      padding-top: 24px;
+      padding-left: 0;
+      &:before {
+        background: $primary;
+        content: "";
+        height: 4px;
+        left: 0;
+        position: absolute;
+        top: 12px;
+        width: 40px;
+      }
+    }
+  }
+
+  &--wufoo {
+    #{ $self }__body {
+      padding: 0;
+    }
+  }
+}
