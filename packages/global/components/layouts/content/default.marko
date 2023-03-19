@@ -184,7 +184,7 @@ $ const shouldInjectAds = ["article", "blog", "media-gallery", "news", "product"
             </marko-web-identity-x-access>
             <marko-web-identity-x-context|{ hasUser }|>
               <if(!hasUser)>
-                <theme-newsletter-signup-banner-external-block />
+                <identity-x-newsletter-form-inline type="inlineContent" />
               </if>
             </marko-web-identity-x-context>
           </theme-page-contents>
