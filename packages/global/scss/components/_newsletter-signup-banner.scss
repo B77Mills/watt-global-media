@@ -1,7 +1,9 @@
 .newsletter-signup-banner {
   margin-bottom: 0;
+  font-family: $skin-font-family-primary;
   &__name, &__description {
     &--large {
+      font-family: $skin-font-family-primary;
       color: $theme-site-navbar-primary-link-color;
     }
   }
