@@ -8,5 +8,8 @@
   "<global-sponsors-block>": {
     "template": "./sponsors.marko",
     "@alias": "string"
+  },
+  "<global-identity-x-newsletter-form-inline>": {
+    "template": "./newsletter-inline.marko"
   }
 }
