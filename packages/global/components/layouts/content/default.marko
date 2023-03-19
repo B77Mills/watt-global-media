@@ -3,7 +3,7 @@ import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/uti
 import contentIframe from "@watt-global-media/package-global/utils/content-iframe";
 
 $ const { site, apollo, contentMeterState } = out.global;
-$ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
+$ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
 
 $ const displayPrimaryImage = ["media-gallery"].includes(type) ? false : true;
