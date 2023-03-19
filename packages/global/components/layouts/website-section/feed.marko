@@ -48,7 +48,16 @@ $ const perPage = 12;
     <global-section-feed-wrapper aliases=aliases alias=alias flow=input.feedFlow with-ads=input.withAds>
       <@node ...input.node />
       <@rail>
-        <theme-newsletter-signup-banner-block class="sticky-top mt-2" modifiers=["1-cols"] />
+        <marko-web-identity-x-context|{ hasUser }|>
+          <if(!hasUser)>
+            <div class="sticky-top mt-2">
+              <global-identity-x-newsletter-form-inline with-image=false type="inlineContent" />
+            </div>
+          </if>
+          <else>
+            <!-- @todo Recommended or other CTA -->
+          </else>
+        </marko-web-identity-x-context>
       </@rail>
       <@rail>
         <theme-client-side-most-popular-list-block class="sticky-top" />

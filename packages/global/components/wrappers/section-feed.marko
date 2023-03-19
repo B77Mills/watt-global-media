@@ -98,8 +98,13 @@ $ const params = { ...queryParams, limit, skip };
         <else>
           <marko-web-identity-x-context|{ hasUser }|>
             <if(!hasUser)>
-              <theme-newsletter-signup-banner-external-block class="sticky-top" />
+              <div class="sticky-top">
+                <global-identity-x-newsletter-form-inline with-image=false type="inlineContent" />
+              </div>
             </if>
+            <else>
+              <!-- @todo Recommended or other CTA -->
+            </else>
           </marko-web-identity-x-context>
         </else>
       </div>
