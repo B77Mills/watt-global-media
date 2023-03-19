@@ -185,7 +185,7 @@ $ const displayComments = ["contact"].includes(type) ? false : true;
             </marko-web-identity-x-access>
             <marko-web-identity-x-context|{ hasUser }|>
               <if(!hasUser)>
-                <identity-x-newsletter-form-inline type="inlineContent" />
+                <global-identity-x-newsletter-form-inline type="inlineContent" with-image=false />
               </if>
             </marko-web-identity-x-context>
             <if(displayComments)>
