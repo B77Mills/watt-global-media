@@ -37,6 +37,7 @@ module.exports = {
     },
     corporate: corporate.logo,
   },
+  tagline: 'Workflow innovations for grain and feed facilities',
   socialMediaLinks: [
     { provider: 'facebook', href: 'https://www.facebook.com/feedandgrain/' },
     { provider: 'linkedin', href: 'https://www.linkedin.com/company/feed-&-grain/' },

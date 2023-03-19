@@ -37,6 +37,7 @@ module.exports = {
     },
     corporate: corporate.logo,
   },
+  tagline: 'The industry\'s global resource for navigating protein production',
   socialMediaLinks: [
     { provider: 'facebook', href: 'https://www.facebook.com/feedstrategy' },
     { provider: 'linkedin', href: 'https://www.linkedin.com/groups/12055651/' },

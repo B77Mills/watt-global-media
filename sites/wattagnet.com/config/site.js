@@ -37,6 +37,7 @@ module.exports = {
     },
     corporate: corporate.logo,
   },
+  tagline: 'Solutions for the U.S. and Canadian integrated poultry meat industry',
   socialMediaLinks: [
     { provider: 'facebook', href: 'https://www.facebook.com/WATTPoultry' },
     { provider: 'linkedin', href: 'https://www.linkedin.com/groups/4855866/' },

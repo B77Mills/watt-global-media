@@ -37,6 +37,7 @@ module.exports = {
     },
     corporate: corporate.logo,
   },
+  tagline: 'Expert coverage on global pet food market trends',
   socialMediaLinks: [
     { provider: 'facebook', href: 'https://www.facebook.com/PetfoodIndustryCommunity' },
     { provider: 'linkedin', href: 'https://www.linkedin.com/groups/5099353/' },
