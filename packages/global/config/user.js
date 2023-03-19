@@ -1,13 +1,13 @@
 module.exports = {
   items: [
     {
-      href: '/login',
+      href: '/user/login',
       label: 'Sign In',
       when: 'logged-out',
       modifiers: ['user'],
     },
     {
-      href: '/logout',
+      href: '/user/logout',
       label: 'Sign Out',
       when: 'logged-in',
       modifiers: ['user'],
@@ -15,7 +15,7 @@ module.exports = {
   ],
   tools: [
     {
-      href: '/login',
+      href: '/user/login',
       label: 'Sign In',
       when: 'logged-out',
       modifiers: ['user'],
@@ -27,7 +27,7 @@ module.exports = {
       modifiers: ['user'],
     },
     {
-      href: '/logout',
+      href: '/user/logout',
       label: 'Sign Out',
       when: 'logged-in',
       modifiers: ['user'],
