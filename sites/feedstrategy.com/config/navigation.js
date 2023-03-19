@@ -94,21 +94,8 @@ module.exports = {
     },
   },
   footer: {
-    col1: {
-      label: 'Topics',
-      colspan: 3,
-      items: topics,
-    },
-    col2: {
-      label: 'Resources',
-      colspan: 3,
-      items: resources,
-    },
-    col3: {
-      label: 'More',
-      colspan: 2,
-      items: [],
-    },
+    topics,
+    more: resources,
     items: [
       privacyPolicy,
       // termsConditions,
