@@ -3,7 +3,7 @@ const privacyPolicy = require('@watt-global-media/package-global/config/privacy-
 const baseConfig = {
   action: 'https://watt.dragonforms.com/loading.do',
   hiddenInputs: [
-    { name: 'omedasite', value: 'FEG_prefs' },
+    { name: 'omedasite', value: 'FS_land' },
   ],
 };
 
@@ -22,11 +22,11 @@ module.exports = {
   // uses inline omeda form
   signupBanner: {
     ...defaults,
-    imagePath: 'files/base/wattglobalmedia/all/image/static/newsletter-pushdown/fg-full.png',
+    imagePath: 'files/base/wattglobalmedia/all/image/static/newsletter-pushdown/fs-full.png',
   },
   pushdown: {
     ...defaults,
-    imagePath: 'files/base/wattglobalmedia/all/image/static/newsletter-pushdown/fg-half.png',
+    imagePath: 'files/base/wattglobalmedia/all/image/static/newsletter-pushdown/fs-half.png',
     description: '',
   },
 
