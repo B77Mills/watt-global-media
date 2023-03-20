@@ -57,9 +57,9 @@ module.exports = {
   },
   setSearchSortFieldToScore: true,
   magazine: {
-    publicationIds: ['640519b0a33405882b1ff5d7'],
+    publicationIds: ['64107886b3ce49ed4e8b4573'],
     subscribe: {
-      id: '640519b0a33405882b1ff5d7',
+      id: '64107886b3ce49ed4e8b4573',
       name: 'Feed and Grain Magazine',
       new: {
         omedasite: 'FGJ_new', // FS_land

@@ -57,9 +57,9 @@ module.exports = {
   },
   setSearchSortFieldToScore: true,
   magazine: {
-    publicationIds: ['NOT_SET'],
+    publicationIds: ['6410abd8ce66936c518b45e8', '6410abe445026ede508b45dd'],
     subscribe: {
-      id: 'NOT_SET',
+      id: '6410abd8ce66936c518b45e8',
       name: 'WATT Poultry USA',
       new: {
         omedasite: 'USA_land',

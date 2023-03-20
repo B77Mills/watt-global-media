@@ -57,9 +57,9 @@ module.exports = {
   },
   setSearchSortFieldToScore: true,
   magazine: {
-    publicationIds: ['NOT_SET'],
+    publicationIds: ['6410ac215a97b8fd4e8b45e6'],
     subscribe: {
-      id: 'NOT_SET',
+      id: '6410ac215a97b8fd4e8b45e6',
       name: 'Petfood Industry Magazine',
       new: {
         omedasite: 'PET_land',

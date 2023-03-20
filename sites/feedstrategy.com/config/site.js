@@ -56,9 +56,9 @@ module.exports = {
   },
   setSearchSortFieldToScore: true,
   magazine: {
-    publicationIds: ['NOT_SET'],
+    publicationIds: ['6410788fce669318518b457a'],
     subscribe: {
-      id: 'NOT_SET',
+      id: '6410788fce669318518b457a',
       name: 'Feed Strategy Magazine',
       new: {
         omedasite: 'FS_land',
