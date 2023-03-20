@@ -11,3 +11,17 @@ $primary: #00677d;
 $secondary: #002a47;
 
 @import "@watt-global-media/package-global/scss/core";
+
+.newsletter-signup-banner {
+  &__name,
+  &__description {
+    &--large {
+      color: #fff;
+    }
+  }
+  &--large {
+    label {
+      color: #fff;
+    }
+  }
+}

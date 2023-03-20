@@ -22,3 +22,16 @@ $secondary: #002a47;
   }
 }
 
+.newsletter-signup-banner {
+  &__name,
+  &__description {
+    &--large {
+      color: #fff;
+    }
+  }
+  &--large {
+    label {
+      color: #fff;
+    }
+  }
+}
