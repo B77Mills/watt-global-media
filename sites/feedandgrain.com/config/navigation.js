@@ -22,7 +22,9 @@ const resources = [
   { href: '/magazine', label: 'Magazine' },
 ];
 
-const utilities = [];
+const utilities = [
+  { href: 'https://www.wattglobalmedia.com/advertising/advertising-feed/', label: 'Advertise', target: '_blank' },
+];
 
 const grainHandlingProcessing = [
   { href: '/grain-handling-processing/grain-elevators', label: 'Grain Elevators' },

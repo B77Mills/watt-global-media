@@ -22,9 +22,7 @@ const resources = [
 ];
 
 const utilities = [
-  // { href: '/utility-1', label: 'Utility 1' },
-  // { href: '/utility-2', label: 'Utility 2' },
-  // { href: '/utility-3', label: 'Utility 3' },
+  { href: 'https://www.wattglobalmedia.com/advertising/advertising-feed/', label: 'Advertise', target: '_blank' },
 ];
 
 const mobileMenu = {
