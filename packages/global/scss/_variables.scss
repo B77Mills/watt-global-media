@@ -165,9 +165,11 @@ $typography: (
 
 .site-menu {
   $self: &;
-  &__section--primary {
-    #{ $self }__item {
-      font-family: $skin-font-family-primary;
+  &__section {
+    &--primary {
+      #{ $self }__item {
+        font-family: $skin-font-family-primary;
+      }
     }
   }
 }
