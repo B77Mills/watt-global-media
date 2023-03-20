@@ -194,21 +194,23 @@ $ const displayComments = ["contact"].includes(type) ? false : true;
           </theme-page-contents>
         </div>
       </div>
-      <div class="col-lg-4 page-rail page-rail--dual-sticky-top">
-        <div class="page-rail__container page-rail__container--dual-sticky-top">
-          $ const inquiry = site.getAsObject('inquiry');
-          <if(content.type === 'product' && content.company)>
-            <div class="mb-block">
-              <theme-company-inquiry-form-block modifiers=["flush-x"] content=content consent-checkboxes=getAsArray(site, 'config.inquiry.consentCheckboxes') />
-            </div>
-          </if>
-          <!-- <global-recommended-content-block content=content aliases=aliases /> -->
-        </div>
-        <div class="page-rail__container page-rail__container--dual-sticky-top">
-          <!-- <global-recommended-content-block content=content aliases=aliases /> -->
-          <if(content.type != 'product')>
-            <!-- <global-leaders-contextual content-id=id /> -->
-          </if>
+      <div class="col-lg-4 page-rail">
+        <theme-gam-define-display-ad
+          name="rotation"
+          position="content_page"
+          aliases=aliases
+          modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+          class="mb-0"
+        />
+        $ const inquiry = site.getAsObject('inquiry');
+        <if(content.type === 'product' && content.company)>
+          <div class="mb-block">
+            <theme-company-inquiry-form-block modifiers=["flush-x"] content=content consent-checkboxes=getAsArray(site, 'config.inquiry.consentCheckboxes') />
+          </div>
+        </if>
+        <div class="sticky-top">
+
+          <global-recommended-content-block query-params={ excludeContentIds: [content.id] } alias=primarySection.alias aliases=aliases />
         </div>
       </div>
     </div>
