@@ -11,3 +11,14 @@ $primary: #2e61aa;
 $secondary: #002a47;
 
 @import "@watt-global-media/package-global/scss/core";
+
+.top-stories-row {
+  @media (min-width: 992px) {
+    .node-list {
+      &--latest-content-list {
+        padding-left: 3.5rem;
+      }
+    }
+  }
+}
+
