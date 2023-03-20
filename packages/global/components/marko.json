@@ -22,6 +22,9 @@
   "<global-site-header-c>": {
     "template": "./site-header-c.marko"
   },
+  "<global-site-footer>": {
+    "template": "./site-footer/index.marko"
+  },
   "<global-site-menu>": {
     "template": "./site-menu/index.marko"
   },
