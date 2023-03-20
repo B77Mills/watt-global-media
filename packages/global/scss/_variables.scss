@@ -1,19 +1,16 @@
-// @import "@parameter1/base-cms-marko-web/scss/fonts/montserrat-fallback";
-// @import "@parameter1/base-cms-marko-web/scss/fonts/source-sans-4-fallback";
+@import "@parameter1/base-cms-marko-web/scss/fonts/montserrat-fallback";
 
 $marko-web-document-container-max-width: 1300px;
 $skin-content-body-max-width: 1000px !default;
 
 // Fonts
-$skin-font-family-primary: acumin-pro, sans-serif !default;
-$skin-font-family-secondary: acumin-pro, sans-serif !default;
+$skin-font-family-primary: "Montserrat", montserrat-fallback, sans-serif !default;
+$skin-font-family-secondary: "Montserrat", montserrat-fallback, sans-serif !default;
 
-$theme-content-body-font: source-serif-pro, serif !default;
-$theme-serif-font-family: source-serif-pro, serif !default;
+$theme-content-body-font: $skin-font-family-primary;
+$theme-header-font-family: $skin-font-family-primary;
 
-$theme-header-font-family: $theme-serif-font-family;
-
-$black: #1f2937;
+$black: #141414;
 $body-color: $black;
 
 // Navbar
@@ -157,7 +154,6 @@ $typography: (
 
 .page-wrapper {
   &__deck {
-    font-family: $theme-serif-font-family;
     font-size: 1.25rem;
     color: #68686c;
   }
