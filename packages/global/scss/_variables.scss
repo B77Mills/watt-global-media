@@ -162,3 +162,12 @@ $typography: (
     color: #68686c;
   }
 }
+
+.site-menu {
+  $self: &;
+  &__section--primary {
+    #{ $self }__item {
+      font-family: $skin-font-family-primary;
+    }
+  }
+}
