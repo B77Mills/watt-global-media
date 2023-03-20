@@ -19,6 +19,7 @@ const topics = [
 const resources = [
   { href: '#', label: 'Top Feed Companies' },
   { href: '#', label: 'Webinars' },
+  { href: '/magazine', label: 'Magazine' },
 ];
 
 const utilities = [
