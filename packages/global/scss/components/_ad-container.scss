@@ -61,4 +61,7 @@
       min-height: 20px + $leaderboard-min-height-desktop + $container-height;
     }
   }
+  &--rail {
+    background-color: #fff;
+  }
 }
