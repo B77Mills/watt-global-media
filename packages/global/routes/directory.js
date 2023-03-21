@@ -7,7 +7,7 @@ const directory = require('../templates/directory/index');
 module.exports = (app, rootAlias = 'directory') => {
   const config = new MarkoWebSearchConfig({
     resultsPerPage: { default: 18 },
-    contentTypes: ['Company'],
+    contentTypes: ['Company', 'Product'],
   });
 
   const searchMiddleware = (req, res, next) => {
